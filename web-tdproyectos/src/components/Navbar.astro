@@ -1,15 +1,19 @@
----
-
----
-
-<nav class="bg-white shadow-lg sticky top-0 z-50 font-sans">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <!-- Logo con animación refinada -->
-    <a href="#inicio" class="flex items-center gap-3 group">
+<nav
+  class="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-50 font-sans text-black dark:text-white"
+  role="navigation"
+  aria-label="Navegación principal"
+>
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center"
+  >
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3 group">
       <div class="flex items-center gap-2">
-        <div class="bg-blue-700 h-8 w-8 rounded-sm animate-spin-slow"></div>
-        <span
-          class="text-4xl font-extrabold text-black tracking-tight animate-fade-in"
+        <div
+          class="bg-blue-700 h-8 w-8 rounded-full shadow-md animate-spin-slow border-2 border-white"
+        >
+        </div>
+        <span class="text-4xl font-extrabold tracking-tight animate-fade-in"
           >T</span
         >
         <span
@@ -17,71 +21,63 @@
           >P</span
         >
       </div>
-      <span class="text-lg font-semibold text-black tracking-tight">
-        Taller de Proyectos
-      </span>
+      <span class="text-xl md:text-2xl font-bold">Taller de Proyectos</span>
     </a>
 
     <!-- Menú Desktop -->
-    <ul class="hidden md:flex space-x-8 font-semibold text-black">
+    <ul class="hidden lg:flex space-x-10 text-base font-medium">
       <li>
-        <a href="#inicio" class="relative group hover:text-blue-700 transition">
-          Inicio
-          <span
-            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-700 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
-          ></span>
-        </a>
+        <a
+          href="/"
+          aria-current="page"
+          class="relative group hover:text-blue-500 transition"
+          >Inicio<span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-600 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
+          ></span></a
+        >
       </li>
       <li>
         <a
           href="#sobre-nosotros"
-          class="relative group hover:text-blue-700 transition"
+          class="relative group hover:text-blue-500 transition"
+          >Sobre Nosotros<span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-600 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
+          ></span></a
         >
-          Sobre Nosotros
-          <span
-            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-700 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
-          ></span>
-        </a>
       </li>
       <li>
         <a
           href="#servicios"
-          class="relative group hover:text-blue-700 transition"
+          class="relative group hover:text-blue-500 transition"
+          >Servicios<span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-600 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
+          ></span></a
         >
-          Servicios
-          <span
-            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-700 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
-          ></span>
-        </a>
       </li>
       <li>
         <a
           href="#proyectos"
-          class="relative group hover:text-blue-700 transition"
+          class="relative group hover:text-blue-500 transition"
+          >Proyectos<span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-600 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
+          ></span></a
         >
-          Proyectos
-          <span
-            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-700 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
-          ></span>
-        </a>
       </li>
       <li>
         <a
           href="#contacto"
-          class="relative group hover:text-blue-700 transition"
+          class="relative group hover:text-blue-500 transition"
+          >Contacto<span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-600 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
+          ></span></a
         >
-          Contacto
-          <span
-            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-700 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
-          ></span>
-        </a>
       </li>
     </ul>
 
-    <!-- Teléfono con ícono SVG -->
+    <!-- Teléfono -->
     <a
-      href="tel:+34123456789"
-      class="hidden md:flex items-center gap-2 text-black hover:text-blue-700 transition"
+      href="tel:+34 950 46 54 66"
+      class="hidden lg:flex items-center gap-2 hover:text-blue-500 transition"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -94,16 +90,16 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
-          d="M3 5h2a2 2 0 012 2v2a2 2 0 01-2 2H3a2 2 0 01-2-2V7a2 2 0 012-2zM21 5h-2a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2zM3 15h2a2 2 0 012 2v2a2 2 0 01-2 2H3a2 2 0 01-2-2v-2a2 2 0 012-2zM21 15h-2a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2z"
+          d="M7 4h10a1 1 0 011 1v14a1 1 0 01-1 1H7a1 1 0 01-1-1V5a1 1 0 011-1zM11 17h2"
         ></path>
       </svg>
-      <span class="text-sm font-semibold">+34 123 456 789</span>
+      <span class="text-sm font-semibold">+34 950 46 54 66</span>
     </a>
 
-    <!-- Hamburguesa móvil -->
+    <!-- Botón hamburguesa: visible en móvil y tablet -->
     <button
       id="menu-btn"
-      class="md:hidden flex flex-col justify-center items-center w-10 h-10 group"
+      class="lg:hidden flex flex-col justify-center items-center w-10 h-10 group"
       aria-label="Abrir menú"
     >
       <span
@@ -121,11 +117,12 @@
   <!-- Menú móvil -->
   <div
     id="mobile-menu"
-    class="md:hidden fixed inset-0 bg-gradient-to-r from-blue-700 to-black text-white z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold opacity-0 pointer-events-none transition-all duration-300"
+    class="lg:hidden fixed inset-0 bg-gradient-to-b from-white to-blue-100 bg-opacity-95 text-blue-900 z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold opacity-0 pointer-events-none transform scale-95 transition-all duration-300 shadow-xl"
   >
     <button
       id="close-menu-btn"
-      class="absolute top-5 right-5 text-white hover:text-gray-300 transition"
+      class="absolute top-5 right-5 text-blue-900 hover:text-blue-600 transition"
+      aria-label="Cerrar menú"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -143,27 +140,27 @@
     </button>
     <a
       href="#inicio"
-      class="hover:text-gray-300 transition"
+      class="hover:text-blue-600 transition"
       onclick="closeMenu()">Inicio</a
     >
     <a
       href="#sobre-nosotros"
-      class="hover:text-gray-300 transition"
+      class="hover:text-blue-600 transition"
       onclick="closeMenu()">Sobre Nosotros</a
     >
     <a
       href="#servicios"
-      class="hover:text-gray-300 transition"
+      class="hover:text-blue-600 transition"
       onclick="closeMenu()">Servicios</a
     >
     <a
       href="#proyectos"
-      class="hover:text-gray-300 transition"
+      class="hover:text-blue-600 transition"
       onclick="closeMenu()">Proyectos</a
     >
     <a
       href="#contacto"
-      class="hover:text-gray-300 transition"
+      class="hover:text-blue-600 transition"
       onclick="closeMenu()">Contacto</a
     >
   </div>
@@ -176,22 +173,23 @@
 
     const openMenu = () => {
       open = true;
-      menu?.classList.remove("opacity-0", "pointer-events-none");
-      menu?.classList.add("opacity-100");
+      menu.classList.remove("opacity-0", "pointer-events-none", "scale-95");
+      menu.classList.add("opacity-100", "scale-100");
+      btn.classList.add("open");
       document.body.style.overflow = "hidden";
     };
 
     const closeMenu = () => {
       open = false;
-      menu?.classList.add("opacity-0", "pointer-events-none");
-      menu?.classList.remove("opacity-100");
+      menu.classList.add("opacity-0", "pointer-events-none", "scale-95");
+      menu.classList.remove("opacity-100", "scale-100");
+      btn.classList.remove("open");
       document.body.style.overflow = "";
     };
 
     btn?.addEventListener("click", openMenu);
     closeBtn?.addEventListener("click", closeMenu);
 
-    // Scroll suave para los enlaces
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
         const targetId = this.getAttribute("href");
@@ -204,9 +202,22 @@
               block: "start",
             });
           }
-          closeMenu(); // Cierra el menú móvil si está abierto
+          closeMenu();
         }
       });
     });
   </script>
+
+  <style>
+    /* Animación hamburguesa */
+    #menu-btn.open span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    #menu-btn.open span:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-btn.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  </style>
 </nav>

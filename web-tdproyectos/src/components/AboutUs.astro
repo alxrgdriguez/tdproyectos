@@ -1,38 +1,84 @@
-<!-- Sobre Nosotros -->
 <section
   id="sobre-nosotros"
-  class="py-24 px-6 md:px-20 bg-white text-gray-800"
+  class="relative py-24 px-6 md:px-20 bg-white text-gray-800 overflow-hidden"
   data-aos="fade-up"
 >
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-blue-900">
-      ¿Quiénes Somos?
-    </h2>
-    <p class="text-xl leading-relaxed mb-8">
-      En <strong>Taller de Proyectos SL</strong> llevamos más de <span
-        class="text-blue-700 font-semibold">15 años</span
-      > liderando el sector de la ingeniería y delineación en el levante almeriense.
-      Nuestro equipo multidisciplinar acompaña a empresas, ingenieros y particulares
-      en cada fase de sus proyectos, garantizando <span class="font-semibold"
-        >precisión, innovación y compromiso</span
-      >.
-    </p>
-    <div class="flex flex-col md:flex-row justify-center gap-8 mt-10">
-      <div
-        class="flex-1 bg-blue-50 rounded-lg p-6 shadow"
-        data-aos="fade-right"
+  <!-- Fondo diagonal decorativo -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div
+      class="absolute -top-24 -left-24 w-[200%] h-64 rotate-3 bg-blue-50 opacity-20"
+    >
+    </div>
+  </div>
+
+  <div
+    class="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 z-10 items-center"
+  >
+    <!-- Columna Izquierda: Imagen / Logo -->
+    <div class="flex justify-center md:justify-start">
+      <div class="bg-white p-6 rounded-xl shadow-md border border-blue-100">
+        <img
+          src="/public/images/services/logo.jpg"
+          alt="Logo Taller de Proyectos"
+          class="w-120 h-auto object-contain"
+        />
+      </div>
+    </div>
+
+    <!-- Columna Derecha: Texto descriptivo -->
+    <div>
+      <h2
+        class="text-4xl md:text-5xl font-extrabold mb-6 text-blue-900 tracking-tight"
       >
-        <h3 class="text-2xl font-bold text-blue-800 mb-2">+500</h3>
-        <p class="text-gray-700">Proyectos realizados</p>
-      </div>
-      <div class="flex-1 bg-blue-50 rounded-lg p-6 shadow" data-aos="fade-up">
-        <h3 class="text-2xl font-bold text-blue-800 mb-2">15 años</h3>
-        <p class="text-gray-700">de experiencia</p>
-      </div>
-      <div class="flex-1 bg-blue-50 rounded-lg p-6 shadow" data-aos="fade-left">
-        <h3 class="text-2xl font-bold text-blue-800 mb-2">100%</h3>
-        <p class="text-gray-700">Clientes satisfechos</p>
-      </div>
+        ¿Quiénes Somos?
+      </h2>
+      <p class="text-lg leading-relaxed text-gray-700 mb-4">
+        <strong class="text-blue-900">Taller de Proyectos SL</strong> es un estudio
+        de ingeniería y arquitectura con más de
+        <span class="text-blue-700 font-semibold">20 años de trayectoria</span>,
+        consolidado como referente en el levante almeriense.
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700 mb-4">
+        Combinamos <span class="font-semibold text-blue-800"
+          >tecnología, precisión y creatividad</span
+        > para ofrecer soluciones integrales a ingenieros, empresas y particulares.
+        Nuestro equipo multidisciplinar está comprometido con la excelencia y la
+        atención personalizada en cada fase del proyecto.
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700">
+        Nos apasiona diseñar y materializar ideas, cumpliendo siempre con
+        normativas, plazos y estándares de calidad. En cada línea trazada, está
+        nuestro sello: <span class="italic text-blue-700"
+          >compromiso y confianza.</span
+        >
+      </p>
+    </div>
+  </div>
+
+  <!-- Bloques de estadísticas -->
+  <div
+    class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto z-10 relative"
+  >
+    <div
+      class="bg-white border-2 border-blue-100 rounded-xl p-6 shadow-sm text-center hover:shadow-md transition"
+      data-aos="fade-right"
+    >
+      <h3 class="text-5xl font-extrabold text-blue-800 mb-2">+200</h3>
+      <p class="text-gray-600 text-base">Proyectos realizados con éxito</p>
+    </div>
+    <div
+      class="bg-white border-2 border-blue-100 rounded-xl p-6 shadow-sm text-center hover:shadow-md transition"
+      data-aos="fade-up"
+    >
+      <h3 class="text-5xl font-extrabold text-blue-800 mb-2">+20 años</h3>
+      <p class="text-gray-600 text-base">de experiencia en el sector</p>
+    </div>
+    <div
+      class="bg-white border-2 border-blue-100 rounded-xl p-6 shadow-sm text-center hover:shadow-md transition"
+      data-aos="fade-left"
+    >
+      <h3 class="text-5xl font-extrabold text-blue-800 mb-2">100%</h3>
+      <p class="text-gray-600 text-base">Clientes satisfechos y recurrentes</p>
     </div>
   </div>
 </section>

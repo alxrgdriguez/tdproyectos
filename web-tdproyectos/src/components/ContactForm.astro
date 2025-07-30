@@ -1,101 +1,125 @@
-<form
-  class="bg-white rounded-lg shadow-lg p-8 space-y-6"
-  method="POST"
-  action="mailto:info@tallerproyectos.com"
-  enctype="text/plain"
->
-  <!-- Título del formulario -->
-  <h2 class="text-2xl font-bold text-blue-900 text-center">Contáctanos</h2>
-  <p class="text-sm text-gray-600 text-center">
-    Completa el formulario y nos pondremos en contacto contigo lo antes posible.
-  </p>
+<section id="contacto" class="bg-blue-50 py-20 px-6 md:px-12 lg:px-20">
+  <!-- Contacto -->
 
-  <!-- Campos del formulario -->
-  <div class="grid md:grid-cols-2 gap-6">
-    <!-- Nombre -->
-    <div>
-      <label for="nombre" class="block text-sm font-semibold text-blue-900 mb-2"
-        >Nombre *</label
-      >
-      <input
-        type="text"
-        id="nombre"
-        name="nombre"
-        required
-        class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        placeholder="Tu nombre completo"
-        autocomplete="name"
-      />
-    </div>
-    <!-- Email -->
-    <div>
-      <label for="email" class="block text-sm font-semibold text-blue-900 mb-2"
-        >Email *</label
-      >
-      <input
-        type="email"
-        id="email"
-        name="email"
-        required
-        class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        placeholder="tu@email.com"
-        autocomplete="email"
-      />
-    </div>
+  <div class="max-w-7xl mx-auto text-center mb-10">
+    <h2 class="text-4xl font-bold text-center text-blue-900">Contacto</h2>
   </div>
-
-  <!-- Teléfono -->
-  <div>
-    <label for="telefono" class="block text-sm font-semibold text-blue-900 mb-2"
-      >Teléfono</label
-    >
-    <input
-      type="tel"
-      id="telefono"
-      name="telefono"
-      class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-      placeholder="Opcional"
-      autocomplete="tel"
-    />
-  </div>
-
-  <!-- Mensaje -->
-  <div>
-    <label for="mensaje" class="block text-sm font-semibold text-blue-900 mb-2"
-      >Mensaje *</label
-    >
-    <textarea
-      id="mensaje"
-      name="mensaje"
-      required
-      rows="5"
-      class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-      placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
-  </div>
-
-  <!-- Aceptación de política de privacidad -->
-  <div class="flex items-center">
-    <input
-      type="checkbox"
-      id="privacidad"
-      name="privacidad"
-      required
-      class="mr-2 accent-blue-600"
-    />
-    <label for="privacidad" class="text-sm text-gray-700">
-      Acepto la <a
-        href="/privacidad"
-        class="text-blue-700 underline hover:text-blue-900"
-        >política de privacidad</a
-      >.
-    </label>
-  </div>
-
-  <!-- Botón de envío -->
-  <button
-    type="submit"
-    class="w-full bg-gradient-to-r from-blue-600 to-cyan-400 text-white font-bold py-3 rounded-lg shadow-lg hover:scale-105 transition-transform duration-200"
+  <div
+    class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch"
   >
-    Enviar mensaje
-  </button>
-</form>
+    <!-- Formulario -->
+    <form
+      class="bg-white rounded-2xl shadow-xl p-8 md:p-10 space-y-8 flex flex-col justify-between"
+      method="POST"
+      action="mailto:info@tallerproyectos.com"
+      enctype="text/plain"
+    >
+      <div>
+        <h2 class="text-3xl font-bold text-blue-900 mb-4 relative">
+          Contáctanos
+          <span class="block w-16 h-1 bg-cyan-400 mt-2"></span>
+        </h2>
+        <p class="text-gray-600 mb-6 text-sm">
+          Completa el formulario y nos pondremos en contacto contigo pronto.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label for="nombre" class="text-sm font-medium text-blue-800"
+              >Nombre *</label
+            >
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              placeholder="Tu nombre"
+              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+          <div>
+            <label for="email" class="text-sm font-medium text-blue-800"
+              >Email *</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="tu@email.com"
+              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="telefono" class="text-sm font-medium text-blue-800"
+            >Teléfono</label
+          >
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            placeholder="Opcional"
+            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+        </div>
+
+        <div>
+          <label for="mensaje" class="text-sm font-medium text-blue-800"
+            >Mensaje *</label
+          >
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            required
+            rows="4"
+            placeholder="Cuéntanos en qué podemos ayudarte"
+            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+          ></textarea>
+        </div>
+
+        <div class="flex items-start gap-2">
+          <input
+            type="checkbox"
+            id="privacidad"
+            name="privacidad"
+            required
+            class="accent-blue-600 mt-1"
+          />
+          <label for="privacidad" class="text-sm text-gray-700">
+            Acepto la
+            <a
+              href="/privacidad"
+              class="text-blue-600 underline hover:text-blue-800"
+            >
+              política de privacidad
+            </a>.
+          </label>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="mt-4 w-full bg-gradient-to-r cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md hover:scale-105 active:scale-100 transition-transform"
+      >
+        Enviar mensaje
+      </button>
+    </form>
+
+    <!-- Mapa -->
+    <div
+      class="w-full h-[250px] md:h-[350px] lg:h-auto rounded-2xl overflow-hidden shadow-xl"
+    >
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.167754326049!2d-1.7488698228582977!3d37.40950963311473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd64d128fec4b15d%3A0x35a0dd48e9727a3b!2sTALLER%20DE%20PROYECTOS%20INGENIERIA%20Y%20DELINEACION%20SL!5e0!3m2!1ses!2ses!4v1753892962824!5m2!1ses!2ses"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="w-full h-full"></iframe>
+    </div>
+  </div>
+</section>

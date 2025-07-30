@@ -1,132 +1,121 @@
----
-
----
-
-<footer class="bg-gradient-to-r from-blue-900 to-black text-white py-12">
+<footer class="bg-white py-16 border-t border-blue-200 shadow-inner">
   <div
-    class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left"
+    class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-evenly gap-12 text-center md:text-left"
   >
-    <!-- Información de la empresa -->
-    <div>
-      <h3 class="text-xl font-bold mb-4">Taller de Proyectos SL</h3>
-      <p class="text-sm leading-relaxed">
-        Ingeniería y delineación de excelencia. Soluciones técnicas innovadoras
-        para profesionales y empresas en Pulpí y toda Almería.
+    <!-- LOGO + DESCRIPCIÓN -->
+    <div class="flex-1">
+      <a
+        href="#inicio"
+        class="flex items-center justify-center md:justify-start gap-3 mb-4 group"
+      >
+        <div class="flex items-center gap-2">
+          <div
+            class="bg-blue-700 h-8 w-8 rounded-full shadow-md animate-spin-slow border-2 border-white"
+          >
+          </div>
+          <span
+            class="text-4xl font-extrabold tracking-tight text-gray-900 group-hover:text-blue-700 transition"
+            >T</span
+          >
+          <span class="text-4xl font-extrabold text-blue-700 tracking-tight"
+            >P</span
+          >
+        </div>
+        <span class="text-xl md:text-2xl font-bold text-gray-800"
+          >Taller de Proyectos</span
+        >
+      </a>
+      <p class="text-sm text-gray-600 leading-relaxed max-w-xs mx-auto md:mx-0">
+        Transformamos ideas en proyectos. Ingeniería, delineación y soluciones
+        técnicas para empresas modernas.
       </p>
     </div>
 
-    <!-- Información de contacto -->
-    <div>
-      <h3 class="text-xl font-bold mb-4">Contacto</h3>
-      <ul class="text-sm space-y-2">
-        <li>
-          <a
-            href="tel:+34123456789"
-            class="flex items-center gap-2 hover:text-cyan-400 transition"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M3 5h2a2 2 0 012 2v2a2 2 0 01-2 2H3a2 2 0 01-2-2V7a2 2 0 012-2zM21 5h-2a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2zM3 15h2a2 2 0 012 2v2a2 2 0 01-2 2H3a2 2 0 01-2-2v-2a2 2 0 012-2zM21 15h-2a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2z"
-              ></path>
-            </svg>
-            +34 123 456 789
-          </a>
-        </li>
-        <li>
-          <a
-            href="mailto:info@tallerproyectos.com"
-            class="flex items-center gap-2 hover:text-cyan-400 transition"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 12H8m0 0l4-4m-4 4l4 4"></path>
-            </svg>
-            info@tallerproyectos.com
-          </a>
-        </li>
-        <li class="flex items-center gap-2">
+    <!-- CONTACTO -->
+    <div class="flex-1">
+      <h4 class="text-lg font-semibold text-blue-800 mb-4">
+        ¿Necesitas ayuda?
+      </h4>
+      <ul class="text-sm text-gray-700 space-y-3">
+        <li class="flex items-center justify-center md:justify-start gap-2">
+          <!-- Horario icono -->
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
+            class="w-5 h-5 text-blue-600"
             fill="none"
-            viewBox="0 0 24 24"
             stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+            <path d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
-          Calle Ejemplo, 123, Pulpí, Almería
+          Lunes a Jueves: 9:00 - 14:00 / 16:00 - 19:00
+          <br />
+          Viernes: 9:00 - 14:00
         </li>
-        <li class="flex items-center gap-2">
+        <li class="flex items-center justify-center md:justify-start gap-2">
+          <!-- Email icono -->
           <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
+            class="w-5 h-5 text-blue-600"
             fill="none"
-            viewBox="0 0 24 24"
             stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M9 12h6m-6 4h6m-6-8h6"></path>
+            <path d="M16 12H8m0 0l4-4m-4 4l4 4"></path>
           </svg>
-          Lunes a Viernes: 9:00 - 14:00 / 16:00 - 19:00
+          <a href="mailto:info@tallerproyectos.com" class="hover:underline"
+            >tallerdeproyectospulpi@gmail.com</a
+          >
+        </li>
+        <li class="flex items-center justify-center md:justify-start gap-2">
+          <!-- Ubicación icono -->
+          <svg
+            class="w-5 h-5 text-blue-600"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 11.5a2 2 0 100-4 2 2 0 000 4z"></path>
+            <path d="M12 22s8-5.5 8-11a8 8 0 10-16 0c0 5.5 8 11 8 11z"></path>
+          </svg>
+          Av. de Andalucía, 16, 04640 Pulpí, Almería
         </li>
       </ul>
     </div>
 
-    <!-- Redes sociales -->
-    <div>
-      <h3 class="text-xl font-bold mb-4">Síguenos</h3>
-      <div class="flex justify-center md:justify-start space-x-4">
+    <!-- REDES + CTA -->
+    <div class="flex-1">
+      <h4 class="text-lg font-semibold text-blue-800 mb-4">Síguenos</h4>
+      <div class="flex justify-center md:justify-start gap-4">
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/taller.deproyectos"
           target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-cyan-400 transition"
+          class="text-blue-600 hover:text-blue-800 transition"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6"
-            fill="currentColor"
-            viewBox="0 0 24 24"
-          >
+          <!-- Facebook icónico con más estilo -->
+          <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
             <path
-              d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.988h-2.54v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.772-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+              d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 5.002 3.657 9.128 8.438 9.876v-6.987H8.078v-2.89h2.36V9.845c0-2.331 1.387-3.622 3.513-3.622.719 0 1.491.127 1.491.127v1.64h-.84c-.827 0-1.087.515-1.087 1.04v1.25h2.025l-.324 2.89h-1.701V21.9C18.343 21.128 22 17.002 22 12z"
             ></path>
           </svg>
+        </a>
+      </div>
+      <div class="mt-6">
+        <a
+          href="#contacto"
+          class="inline-block bg-blue-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-blue-700 transition"
+        >
+          Contáctanos
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Línea divisoria -->
-  <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm">
-    <p>
-      &copy; 2025 TALLER DE PROYECTOS INGENIERÍA Y DELINEACIÓN SL. Todos los
-      derechos reservados.
-    </p>
+  <!-- COPYRIGHT -->
+  <div
+    class="mt-10 border-t border-gray-200 pt-4 text-center text-sm text-gray-500"
+  >
+    &copy; 2025 Taller de Proyectos Ingeniería y Delineación SL.
   </div>
 </footer>

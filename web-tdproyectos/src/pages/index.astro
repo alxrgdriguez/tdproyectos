@@ -34,17 +34,38 @@ import ScrollToTop from "../components/ScrollToTop.astro";
     <div class="absolute inset-0 bg-blue-900/70 backdrop-blur-sm"></div>
     <div class="relative z-10" data-aos="fade-down">
       <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow-lg mb-6">
-        Ingeniería & Delineación de Excelencia
+        Estudio de Arquitectura e Ingeniería
       </h1>
       <p class="mt-2 text-2xl md:text-3xl font-light max-w-2xl mx-auto">
-        Soluciones técnicas innovadoras para profesionales y empresas en Pulpí y
-        toda Almería.
+        Soluciones técnicas e innovadoras
       </p>
       <a
         href="#contacto"
-        class="mt-10 inline-block bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-200"
-        >Solicita tu presupuesto personalizado</a
+        class="group mt-10 inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-blue-700 to-cyan-600 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 relative overflow-hidden animate-flicker"
       >
+        <span class="relative z-10">📧 Contacta con nosotros</span>
+        <span
+          class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition duration-300"
+        ></span>
+      </a>
+
+      <style>
+        @keyframes flicker {
+          0%,
+          100% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.85;
+          }
+          75% {
+            opacity: 0.95;
+          }
+        }
+        .animate-flicker {
+          animation: flicker 2s ease-in-out infinite;
+        }
+      </style>
     </div>
     <div
       class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce"
@@ -57,6 +78,9 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 
   <ScrollToTop />
 
+  <h2 class="text-4xl font-bold text-center mt-12 mb-2 text-blue-900">
+    Sobre Nosotros
+  </h2>
   <AboutUs />
 
   <!-- Servicios -->
@@ -113,37 +137,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
     </div>
   </section>
 
-  <!-- Contacto -->
-  <section
-    id="contacto"
-    class="py-24 px-6 bg-gradient-to-br from-blue-100 via-white to-blue-50 text-black"
-    data-aos="fade-up"
-  >
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-8 text-blue-900">
-        Contacta con Nosotros
-      </h2>
-      <ContactForm />
-      <div class="mt-10 text-center text-lg">
-        <p>
-          <strong>Teléfono:</strong>
-          <a href="tel:+34123456789" class="text-blue-700 hover:underline"
-            >+34 950 46 54 66</a
-          >
-        </p>
-        <p>
-          <strong>Email:</strong>
-          <a
-            href="mailto:info@tallerproyectos.com"
-            class="text-blue-700 hover:underline">info@tallerproyectos.com</a
-          >
-        </p>
-        <p>
-          <strong>Horario:</strong> Lunes a Viernes: 9:00 - 14:00 / 16:00 - 19:00
-        </p>
-      </div>
-    </div>
-  </section>
+  <ContactForm />
 
   <Fragment slot="footer">
     <Footer />

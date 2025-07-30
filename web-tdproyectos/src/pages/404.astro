@@ -1,0 +1,71 @@
+---
+// src/pages/404.astro
+import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout title="Página no encontrada - Taller de Proyectos SL">
+  <Fragment slot="header">
+    <Navbar />
+  </Fragment>
+
+  <section
+    class="h-screen relative flex flex-col items-center justify-center text-center overflow-hidden text-white"
+  >
+    <!-- Fondo animado con video como en Hero -->
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+      <source src="/public/video_Plano.mp4" type="video/mp4" />
+      Tu navegador no soporta videos HTML5.
+    </video>
+
+    <div class="absolute inset-0 bg-blue-900/70 backdrop-blur-md"></div>
+
+    <div class="relative z-10 max-w-2xl px-4" data-aos="fade-down">
+      <h1 class="text-7xl font-extrabold mb-6 drop-shadow-xl animate-pulse">
+        Página no encontrada
+      </h1>
+      <p class="text-2xl font-light mb-6">
+        Parece que te has desviado del plano principal.
+      </p>
+      <a
+        href="/"
+        class="group inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-blue-700 to-cyan-600 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 relative overflow-hidden animate-flicker"
+      >
+        <span class="relative z-10">🏠 Volver a la página principal</span>
+        <span
+          class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition duration-300"
+        ></span>
+      </a>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+
+  <style>
+    @keyframes flicker {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.85;
+      }
+      75% {
+        opacity: 0.95;
+      }
+    }
+    .animate-flicker {
+      animation: flicker 2s ease-in-out infinite;
+    }
+  </style>
+</BaseLayout>
