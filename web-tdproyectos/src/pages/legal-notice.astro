@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+  title="Aviso Legal - TALLER DE PROYECTOS INGENIERIA Y DELINEACION SL"
+>
+  <Fragment slot="header">
+    <Navbar />
+  </Fragment>
+
+  <section class="max-w-4xl mx-auto px-6 py-20 text-gray-900">
+    <h1 class="text-4xl font-extrabold text-blue-900 mb-8">Aviso Legal</h1>
+
+    <p class="mb-6">
+      Este sitio web es propiedad de <strong
+        >TALLER DE PROYECTOS INGENIERIA Y DELINEACION SL</strong
+      >, con domicilio en Av. de Andalucía, 16, 04640 Pulpí, Almería y CIF <em
+        >B04501078</em
+      >. Puedes contactar con nosotros en <em
+        >tallerdeproyectospulpi@gmail.com</em
+      >.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+      1. Condiciones de Uso
+    </h2>
+    <p class="mb-6">
+      El uso del sitio web implica la aceptación plena del presente Aviso Legal.
+      El usuario se compromete a utilizar el sitio de forma responsable,
+      respetando la ley y los derechos de terceros.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+      2. Propiedad Intelectual
+    </h2>
+    <p class="mb-6">
+      Todos los contenidos (textos, imágenes, logotipos, estructura y diseño)
+      son propiedad de TALLER DE PROYECTOS INGENIERIA Y DELINEACION SL o
+      terceros autorizados. Está prohibida su reproducción sin permiso expreso.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+      3. Responsabilidad
+    </h2>
+    <p class="mb-6">
+      No se garantiza que el sitio esté libre de errores o interrupciones. No
+      nos responsabilizamos de los daños derivados del uso del sitio ni de los
+      enlaces externos contenidos en él.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+      4. Protección de Datos
+    </h2>
+    <p class="mb-6">
+      Los datos personales facilitados serán tratados según nuestra <a
+        class="text-blue-600 underline hover:text-blue-800"
+        href="/privacy-policy">Política de Privacidad</a
+      > y conforme al RGPD.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-800 mb-4">5. Cookies</h2>
+    <p class="mb-6">
+      Este sitio utiliza cookies para mejorar la experiencia del usuario. Para
+      más información, consulta nuestra <a href="/cookies"
+        >Política de Cookies</a
+      >.
+    </p>
+
+    <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+      6. Legislación Aplicable
+    </h2>
+    <p>
+      Este Aviso Legal se rige por la normativa española. Para cualquier
+      controversia relacionada con el sitio web, las partes se someten a los
+      Juzgados y Tribunales.
+    </p>
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>
