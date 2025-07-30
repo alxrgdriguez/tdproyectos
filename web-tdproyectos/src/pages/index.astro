@@ -1,0 +1,151 @@
+---
+import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ContactForm from "../components/ContactForm.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import AboutUs from "../components/AboutUs.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
+---
+
+<BaseLayout title="Taller de Proyectos SL | Ingeniería y Delineación">
+  <Fragment slot="header">
+    <Navbar />
+  </Fragment>
+
+  <!-- Hero Section -->
+  <section
+    id="inicio"
+    class="h-screen relative flex flex-col items-center justify-center text-center text-white overflow-hidden"
+  >
+    <!-- Video de fondo -->
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+      <source src="/public/video_Plano.mp4" type="video/mp4" />
+      Tu navegador no soporta videos HTML5.
+    </video>
+    <div class="absolute inset-0 bg-blue-900/70 backdrop-blur-sm"></div>
+    <div class="relative z-10" data-aos="fade-down">
+      <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow-lg mb-6">
+        Ingeniería & Delineación de Excelencia
+      </h1>
+      <p class="mt-2 text-2xl md:text-3xl font-light max-w-2xl mx-auto">
+        Soluciones técnicas innovadoras para profesionales y empresas en Pulpí y
+        toda Almería.
+      </p>
+      <a
+        href="#contacto"
+        class="mt-10 inline-block bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-200"
+        >Solicita tu presupuesto personalizado</a
+      >
+    </div>
+    <div
+      class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce"
+    >
+      <svg width="32" height="32" fill="none" stroke="white" stroke-width="2"
+        ><path d="M16 4v24M8 20l8 8 8-8"></path></svg
+      >
+    </div>
+  </section>
+
+  <ScrollToTop />
+
+  <AboutUs />
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-24 px-6 bg-gray-100" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">
+        Nuestros Servicios
+      </h2>
+      <div class="grid md:grid-cols-3 gap-18">
+        <ServiceCard
+          image="/public/images/services/delineacion_tecnica.png"
+          title="Delineación Técnica"
+          desc="Planos de obra, reformas, proyectos industriales y documentación técnica con máxima precisión."
+        />
+        <ServiceCard
+          image="/public/images/services/asistencia_ingenieros.png"
+          title="Asistencia a Ingenieros"
+          desc="Soporte integral en proyectos eléctricos, mecánicos y estructurales. Colaboración directa con estudios de ingeniería."
+        />
+        <ServiceCard
+          image="/public/images/services/topografia.png"
+          title="Topografía"
+          desc="Mediciones, replanteos y colaboración con topógrafos y agrimensores para resultados exactos."
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos Destacados -->
+  <section id="proyectos" class="py-24 px-6 bg-white" data-aos="fade-up">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">
+        Proyectos Destacados
+      </h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        <ProjectCard
+          img="/images/proyecto1.jpg"
+          title="Vivienda Unifamiliar en Vera"
+          desc="Delineación y gestión técnica integral para obra nueva. Coordinación con arquitectos y promotores."
+        />
+        <ProjectCard
+          img="/images/proyecto2.jpg"
+          title="Nave Industrial en Pulpí"
+          desc="Diseño técnico, planos y tramitación para nave logística. Ejecución en tiempo récord."
+        />
+      </div>
+      <div class="text-center mt-10">
+        <a
+          href="#contacto"
+          class="inline-block bg-blue-800 text-white px-8 py-3 rounded-full font-semibold shadow hover:bg-blue-700 transition"
+          >Solicita información sobre tu proyecto</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section
+    id="contacto"
+    class="py-24 px-6 bg-gradient-to-br from-blue-100 via-white to-blue-50 text-black"
+    data-aos="fade-up"
+  >
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold text-center mb-8 text-blue-900">
+        Contacta con Nosotros
+      </h2>
+      <ContactForm />
+      <div class="mt-10 text-center text-lg">
+        <p>
+          <strong>Teléfono:</strong>
+          <a href="tel:+34123456789" class="text-blue-700 hover:underline"
+            >+34 950 46 54 66</a
+          >
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <a
+            href="mailto:info@tallerproyectos.com"
+            class="text-blue-700 hover:underline">info@tallerproyectos.com</a
+          >
+        </p>
+        <p>
+          <strong>Horario:</strong> Lunes a Viernes: 9:00 - 14:00 / 16:00 - 19:00
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</BaseLayout>

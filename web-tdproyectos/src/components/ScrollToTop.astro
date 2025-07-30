@@ -1,0 +1,62 @@
+---
+
+---
+
+<button
+  id="scrollToTopBtn"
+  class="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible transform translate-y-4"
+  title="Volver arriba"
+  aria-label="Volver arriba"
+>
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+  </svg>
+</button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopBtn = document.getElementById(
+      "scrollToTopBtn"
+    ) as HTMLButtonElement;
+
+    if (!scrollToTopBtn) return;
+
+    // Mostrar/ocultar botón basado en scroll
+    function toggleScrollButton() {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.remove(
+          "opacity-0",
+          "invisible",
+          "translate-y-4"
+        );
+        scrollToTopBtn.classList.add("opacity-100", "visible", "translate-y-0");
+      } else {
+        scrollToTopBtn.classList.add("opacity-0", "invisible", "translate-y-4");
+        scrollToTopBtn.classList.remove(
+          "opacity-100",
+          "visible",
+          "translate-y-0"
+        );
+      }
+    }
+
+    // Scroll suave hacia arriba
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+
+    // Event listeners
+    window.addEventListener("scroll", toggleScrollButton);
+    scrollToTopBtn.addEventListener("click", scrollToTop);
+
+    // Verificar posición inicial
+    toggleScrollButton();
+  });
+</script>

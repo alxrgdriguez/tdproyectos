@@ -1,0 +1,24 @@
+---
+import "../styles/global.css";
+const { title } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title ?? "Taller de Proyectos"}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      href="/public/images/favicon.jpg"
+      type="image/x-icon"
+    />
+  </head>
+  <body class="font-sans bg-white text-black scroll-smooth">
+    <slot name="header" />
+    <main>
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>

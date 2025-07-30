@@ -1,0 +1,212 @@
+---
+
+---
+
+<nav class="bg-white shadow-lg sticky top-0 z-50 font-sans">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <!-- Logo con animación refinada -->
+    <a href="#inicio" class="flex items-center gap-3 group">
+      <div class="flex items-center gap-2">
+        <div class="bg-blue-700 h-8 w-8 rounded-sm animate-spin-slow"></div>
+        <span
+          class="text-4xl font-extrabold text-black tracking-tight animate-fade-in"
+          >T</span
+        >
+        <span
+          class="text-4xl font-extrabold text-blue-700 tracking-tight animate-fade-in"
+          >P</span
+        >
+      </div>
+      <span class="text-lg font-semibold text-black tracking-tight">
+        Taller de Proyectos
+      </span>
+    </a>
+
+    <!-- Menú Desktop -->
+    <ul class="hidden md:flex space-x-8 font-semibold text-black">
+      <li>
+        <a href="#inicio" class="relative group hover:text-blue-700 transition">
+          Inicio
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-700 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#sobre-nosotros"
+          class="relative group hover:text-blue-700 transition"
+        >
+          Sobre Nosotros
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-700 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#servicios"
+          class="relative group hover:text-blue-700 transition"
+        >
+          Servicios
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-700 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#proyectos"
+          class="relative group hover:text-blue-700 transition"
+        >
+          Proyectos
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-700 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
+          ></span>
+        </a>
+      </li>
+      <li>
+        <a
+          href="#contacto"
+          class="relative group hover:text-blue-700 transition"
+        >
+          Contacto
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-700 scale-x-0 transition-transform origin-left group-hover:scale-x-100"
+          ></span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Teléfono con ícono SVG -->
+    <a
+      href="tel:+34123456789"
+      class="hidden md:flex items-center gap-2 text-black hover:text-blue-700 transition"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 text-blue-700"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M3 5h2a2 2 0 012 2v2a2 2 0 01-2 2H3a2 2 0 01-2-2V7a2 2 0 012-2zM21 5h-2a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2zM3 15h2a2 2 0 012 2v2a2 2 0 01-2 2H3a2 2 0 01-2-2v-2a2 2 0 012-2zM21 15h-2a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2z"
+        ></path>
+      </svg>
+      <span class="text-sm font-semibold">+34 123 456 789</span>
+    </a>
+
+    <!-- Hamburguesa móvil -->
+    <button
+      id="menu-btn"
+      class="md:hidden flex flex-col justify-center items-center w-10 h-10 group"
+      aria-label="Abrir menú"
+    >
+      <span
+        class="block w-7 h-1 bg-blue-700 rounded transition-all duration-300 mb-1"
+      ></span>
+      <span
+        class="block w-7 h-1 bg-blue-700 rounded transition-all duration-300 mb-1"
+      ></span>
+      <span
+        class="block w-7 h-1 bg-blue-700 rounded transition-all duration-300"
+      ></span>
+    </button>
+  </div>
+
+  <!-- Menú móvil -->
+  <div
+    id="mobile-menu"
+    class="md:hidden fixed inset-0 bg-gradient-to-r from-blue-700 to-black text-white z-40 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold opacity-0 pointer-events-none transition-all duration-300"
+  >
+    <button
+      id="close-menu-btn"
+      class="absolute top-5 right-5 text-white hover:text-gray-300 transition"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <a
+      href="#inicio"
+      class="hover:text-gray-300 transition"
+      onclick="closeMenu()">Inicio</a
+    >
+    <a
+      href="#sobre-nosotros"
+      class="hover:text-gray-300 transition"
+      onclick="closeMenu()">Sobre Nosotros</a
+    >
+    <a
+      href="#servicios"
+      class="hover:text-gray-300 transition"
+      onclick="closeMenu()">Servicios</a
+    >
+    <a
+      href="#proyectos"
+      class="hover:text-gray-300 transition"
+      onclick="closeMenu()">Proyectos</a
+    >
+    <a
+      href="#contacto"
+      class="hover:text-gray-300 transition"
+      onclick="closeMenu()">Contacto</a
+    >
+  </div>
+
+  <script type="module">
+    const btn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    let open = false;
+
+    const openMenu = () => {
+      open = true;
+      menu?.classList.remove("opacity-0", "pointer-events-none");
+      menu?.classList.add("opacity-100");
+      document.body.style.overflow = "hidden";
+    };
+
+    const closeMenu = () => {
+      open = false;
+      menu?.classList.add("opacity-0", "pointer-events-none");
+      menu?.classList.remove("opacity-100");
+      document.body.style.overflow = "";
+    };
+
+    btn?.addEventListener("click", openMenu);
+    closeBtn?.addEventListener("click", closeMenu);
+
+    // Scroll suave para los enlaces
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href");
+        if (targetId && targetId.startsWith("#")) {
+          e.preventDefault();
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+          closeMenu(); // Cierra el menú móvil si está abierto
+        }
+      });
+    });
+  </script>
+</nav>

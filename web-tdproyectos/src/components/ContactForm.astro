@@ -1,0 +1,101 @@
+<form
+  class="bg-white rounded-lg shadow-lg p-8 space-y-6"
+  method="POST"
+  action="mailto:info@tallerproyectos.com"
+  enctype="text/plain"
+>
+  <!-- Título del formulario -->
+  <h2 class="text-2xl font-bold text-blue-900 text-center">Contáctanos</h2>
+  <p class="text-sm text-gray-600 text-center">
+    Completa el formulario y nos pondremos en contacto contigo lo antes posible.
+  </p>
+
+  <!-- Campos del formulario -->
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- Nombre -->
+    <div>
+      <label for="nombre" class="block text-sm font-semibold text-blue-900 mb-2"
+        >Nombre *</label
+      >
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        required
+        class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Tu nombre completo"
+        autocomplete="name"
+      />
+    </div>
+    <!-- Email -->
+    <div>
+      <label for="email" class="block text-sm font-semibold text-blue-900 mb-2"
+        >Email *</label
+      >
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="tu@email.com"
+        autocomplete="email"
+      />
+    </div>
+  </div>
+
+  <!-- Teléfono -->
+  <div>
+    <label for="telefono" class="block text-sm font-semibold text-blue-900 mb-2"
+      >Teléfono</label
+    >
+    <input
+      type="tel"
+      id="telefono"
+      name="telefono"
+      class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      placeholder="Opcional"
+      autocomplete="tel"
+    />
+  </div>
+
+  <!-- Mensaje -->
+  <div>
+    <label for="mensaje" class="block text-sm font-semibold text-blue-900 mb-2"
+      >Mensaje *</label
+    >
+    <textarea
+      id="mensaje"
+      name="mensaje"
+      required
+      rows="5"
+      class="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+  </div>
+
+  <!-- Aceptación de política de privacidad -->
+  <div class="flex items-center">
+    <input
+      type="checkbox"
+      id="privacidad"
+      name="privacidad"
+      required
+      class="mr-2 accent-blue-600"
+    />
+    <label for="privacidad" class="text-sm text-gray-700">
+      Acepto la <a
+        href="/privacidad"
+        class="text-blue-700 underline hover:text-blue-900"
+        >política de privacidad</a
+      >.
+    </label>
+  </div>
+
+  <!-- Botón de envío -->
+  <button
+    type="submit"
+    class="w-full bg-gradient-to-r from-blue-600 to-cyan-400 text-white font-bold py-3 rounded-lg shadow-lg hover:scale-105 transition-transform duration-200"
+  >
+    Enviar mensaje
+  </button>
+</form>
