@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.85;
+    }
+
+    75% {
+        opacity: 0.95;
+    }
+}
+
+.animate-flicker {
+    animation: flicker 2s ease-in-out infinite;
+}
