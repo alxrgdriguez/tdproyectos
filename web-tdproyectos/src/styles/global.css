@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+html,
+body {
+    scroll-behavior: auto;
+    /* al inicio */
+}
+
+
+
 @keyframes flicker {
 
     0%,
@@ -18,4 +26,15 @@
 
 .animate-flicker {
     animation: flicker 2s ease-in-out infinite;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

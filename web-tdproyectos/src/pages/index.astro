@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
-import ServiceCard from "../components/ServiceCard.astro";
+import Services from "../components/Services.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import AboutUs from "../components/AboutUs.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
@@ -23,8 +23,10 @@ import ScrollToTop from "../components/ScrollToTop.astro";
     <!-- Video de fondo -->
     <video
       autoplay
-      loop
       muted
+      loop
+      playsinline
+      preload="auto"
       playsinline
       class="absolute inset-0 w-full h-full object-cover"
     >
@@ -41,15 +43,13 @@ import ScrollToTop from "../components/ScrollToTop.astro";
       </p>
       <a
         href="#contacto"
-        class="group mt-10 inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-blue-700 to-cyan-600 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 relative overflow-hidden animate-flicker"
+        class="group mt-10 inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-cyan-600 to-blue-700 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 relative overflow-hidden animate-flicker"
       >
         <span class="relative z-10">📧 Contacta con nosotros</span>
         <span
           class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition duration-300"
         ></span>
       </a>
-
-      <style></style>
     </div>
     <div
       class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce"
@@ -62,36 +62,9 @@ import ScrollToTop from "../components/ScrollToTop.astro";
 
   <ScrollToTop />
 
-  <h2 class="text-4xl font-bold text-center mt-12 mb-2 text-blue-900">
-    Sobre Nosotros
-  </h2>
   <AboutUs />
 
-  <!-- Servicios -->
-  <section id="servicios" class="py-24 px-6 bg-blue-50" data-aos="fade-up">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">
-        Nuestros Servicios
-      </h2>
-      <div class="grid md:grid-cols-3 gap-18">
-        <ServiceCard
-          image="images/services/delineacion_tecnica.png"
-          title="Delineación Técnica"
-          desc="Planos de obra, reformas, proyectos industriales y documentación técnica con máxima precisión."
-        />
-        <ServiceCard
-          image="/images/services/asistencia_ingenieros.png"
-          title="Asistencia a Ingenieros"
-          desc="Soporte integral en proyectos eléctricos, mecánicos y estructurales. Colaboración directa con estudios de ingeniería."
-        />
-        <ServiceCard
-          image="/images/services/topografia.png"
-          title="Topografía"
-          desc="Mediciones, replanteos y colaboración con topógrafos y agrimensores para resultados exactos."
-        />
-      </div>
-    </div>
-  </section>
+  <Services />
 
   <!-- Proyectos Destacados -->
   <section id="proyectos" class="py-24 px-6 bg-white" data-aos="fade-up">

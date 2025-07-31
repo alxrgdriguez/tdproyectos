@@ -1,0 +1,39 @@
+---
+import ServicesCard from "./ServicesCard.tsx";
+import { services } from "./services.data";
+---
+
+<section
+  id="servicios"
+  class="relative bg-gradient-to-br bg-blue-50 py-24 px-6 overflow-hidden"
+>
+  <section class="max-w-7xl mx-auto text-center">
+    <h2
+      class="text-5xl md:text-6xl font-extrabold text-blue-900 tracking-tight mb-6"
+    >
+      Soluciones Técnicas de Alto Nivel
+    </h2>
+    <p class="text-xl text-gray-700 mb-20 max-w-3xl mx-auto">
+      Ingeniería, legalización, eficiencia energética y visualización 3D con
+      precisión, estilo y profesionalismo.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      {
+        services.map((services) => (
+          <ServicesCard services={services} client:load />
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Decoraciones -->
+  <div
+    class="absolute -top-20 -left-20 w-72 h-72 bg-cyan-300 opacity-20 rounded-full blur-3xl"
+  >
+  </div>
+  <div
+    class="absolute -bottom-20 -right-20 w-72 h-72 bg-blue-400 opacity-20 rounded-full blur-3xl"
+  >
+  </div>
+</section>
