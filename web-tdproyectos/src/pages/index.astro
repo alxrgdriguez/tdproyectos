@@ -5,7 +5,6 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ContactForm from "../components/ContactForm.astro";
 import Services from "../components/Services.astro";
-import ProjectCard from "../components/ProjectCard.astro";
 import AboutUs from "../components/AboutUs.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
 ---
@@ -65,34 +64,6 @@ import ScrollToTop from "../components/ScrollToTop.astro";
   <AboutUs />
 
   <Services />
-
-  <!-- Proyectos Destacados -->
-  <section id="proyectos" class="py-24 px-6 bg-white" data-aos="fade-up">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-12 text-blue-900">
-        Proyectos Destacados
-      </h2>
-      <div class="grid md:grid-cols-2 gap-10">
-        <ProjectCard
-          img=""
-          title="Vivienda Unifamiliar en Vera"
-          desc="Delineación y gestión técnica integral para obra nueva. Coordinación con arquitectos y promotores."
-        />
-        <ProjectCard
-          img=""
-          title="Nave Industrial en Pulpí"
-          desc="Diseño técnico, planos y tramitación para nave logística. Ejecución en tiempo récord."
-        />
-      </div>
-      <div class="text-center mt-10">
-        <a
-          href="#contacto"
-          class="inline-block bg-blue-800 text-white px-8 py-3 rounded-full font-semibold shadow hover:bg-blue-700 transition"
-          >Solicita información sobre tu proyecto</a
-        >
-      </div>
-    </div>
-  </section>
 
   <ContactForm />
 
