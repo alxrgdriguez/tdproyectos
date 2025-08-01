@@ -14,8 +14,10 @@
     "@tailwindcss/vite": "^4.1.11",
     "aos": "^2.3.4",
     "astro": "^5.12.5",
+    "keen-slider": "^6.8.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-photo-view": "^1.2.7",
     "tailwindcss": "^4.1.11"
   }
 }
