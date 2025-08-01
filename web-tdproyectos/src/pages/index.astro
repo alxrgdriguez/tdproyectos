@@ -7,6 +7,7 @@ import ContactForm from "../components/ContactForm.astro";
 import Services from "../components/Services.astro";
 import AboutUs from "../components/AboutUs.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
+import HeroSection from "../components/HeroSection.astro";
 ---
 
 <BaseLayout title="Taller de Proyectos | Ingeniería y Delineación SL ">
@@ -14,50 +15,7 @@ import ScrollToTop from "../components/ScrollToTop.astro";
     <Navbar />
   </Fragment>
 
-  <!-- Hero Section -->
-  <section
-    id="inicio"
-    class="h-screen relative flex flex-col items-center justify-center text-center text-white overflow-hidden"
-  >
-    <!-- Video de fondo -->
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-      playsinline
-      class="absolute inset-0 w-full h-full object-cover"
-    >
-      <source src="/videos/video_Plano.mp4" type="video/mp4" />
-      Tu navegador no soporta videos HTML5.
-    </video>
-    <div class="absolute inset-0 bg-blue-900/70 backdrop-blur-sm"></div>
-    <div class="relative z-10" data-aos="fade-down">
-      <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow-lg mb-6">
-        Estudio de Arquitectura e Ingeniería
-      </h1>
-      <p class="mt-2 text-2xl md:text-3xl font-light max-w-2xl mx-auto">
-        Soluciones técnicas e innovadoras
-      </p>
-      <a
-        href="#contacto"
-        class="group mt-10 inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-cyan-600 to-blue-700 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 relative overflow-hidden animate-flicker"
-      >
-        <span class="relative z-10">📧 Contacta con nosotros</span>
-        <span
-          class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition duration-300"
-        ></span>
-      </a>
-    </div>
-    <div
-      class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce"
-    >
-      <svg width="32" height="32" fill="none" stroke="white" stroke-width="2"
-        ><path d="M16 4v24M8 20l8 8 8-8"></path></svg
-      >
-    </div>
-  </section>
+  <HeroSection />
 
   <ScrollToTop />
 
