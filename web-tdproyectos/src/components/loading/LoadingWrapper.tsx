@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SpinnerText from "./SpinnerText";
+import SpinnerText from "./SpinnerText.tsx";
 
 let hasLoadedOnce = false; // variable global para controlar si ya se mostró el spinner
 

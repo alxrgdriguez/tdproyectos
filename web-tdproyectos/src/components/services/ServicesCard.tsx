@@ -1,5 +1,5 @@
 import { Icon } from "@iconify-icon/react";
-import type { Service } from "./services.data";
+import type { Service } from "./services.data.ts";
 
 type Props = {
   services: Service;
