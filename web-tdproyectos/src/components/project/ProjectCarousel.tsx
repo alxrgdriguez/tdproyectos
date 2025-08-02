@@ -8,6 +8,13 @@ const images = [
   { src: "/images/3d-models/D1.webp", alt: "Casa render 4" },
   { src: "/images/3d-models/1A.webp", alt: "Casa render 5" },
   { src: "/images/3d-models/2A.webp", alt: "Casa render 6" },
+  { src: "/images/3d-models/2A_2.webp", alt: "Casa render 7" },
+  { src: "/images/3d-models/3A.webp", alt: "Casa render 8" },
+  { src: "/images/3d-models/4A.webp", alt: "Casa render 9" },
+  { src: "/images/3d-models/5A.webp", alt: "Casa render 10" },
+  { src: "/images/3d-models/6A.webp", alt: "Casa render 11" },
+  { src: "/images/3d-models/7A.webp", alt: "Casa render 12" },
+  { src: "/images/3d-models/8A.webp", alt: "Casa render 13" },
 ];
 
 export default function ProjectCarousel() {
