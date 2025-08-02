@@ -1,22 +1,25 @@
-<!-- HeroSection -->
 <section
   id="inicio"
-  class="h-screen relative flex flex-col items-center justify-center text-center text-white overflow-hidden"
+  class="relative h-screen flex flex-col items-center justify-center text-center text-white overflow-hidden pt-16"
 >
-  <!-- Video de fondo -->
+  <!-- offset para ancla -->
+  <div class="absolute -top-16 h-16 w-full pointer-events-none"></div>
+
+  <!-- Video -->
   <video
     autoplay
     muted
     loop
     playsinline
     preload="auto"
-    playsinline
     class="absolute inset-0 w-full h-full object-cover"
   >
     <source src="/videos/video_Plano.mp4" type="video/mp4" />
     Tu navegador no soporta videos HTML5.
   </video>
+
   <div class="absolute inset-0 bg-blue-900/70 backdrop-blur-sm"></div>
+
   <div class="relative z-10" data-aos="fade-down">
     <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow-lg mb-6">
       Estudio de Arquitectura e Ingeniería
@@ -34,6 +37,7 @@
       ></span>
     </a>
   </div>
+
   <div
     class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce"
   >

@@ -2,11 +2,9 @@
 
 html,
 body {
-    scroll-behavior: auto;
-    /* al inicio */
+    scroll-padding-top: 100px;
+    /* Ajusta a la altura del navbar */
 }
-
-
 
 @keyframes flicker {
 
@@ -24,6 +22,7 @@ body {
     }
 }
 
+/*Animacion suave por seccion*/
 .animate-flicker {
     animation: flicker 2s ease-in-out infinite;
 }
@@ -39,6 +38,7 @@ body {
     transform: translateY(0);
 }
 
+/*Oculta scroll cuando hace animación de entrada a la web*/
 .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -46,10 +46,4 @@ body {
 
 .scrollbar-hide::-webkit-scrollbar {
     display: none;
-}
-
-.blurred>*:not(.fixed):not(.z-50) {
-    filter: blur(5px);
-    pointer-events: none;
-    user-select: none;
 }
