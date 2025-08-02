@@ -18,6 +18,7 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-photo-view": "^1.2.7",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "vite-imagetools": "^7.1.0"
   }
 }
