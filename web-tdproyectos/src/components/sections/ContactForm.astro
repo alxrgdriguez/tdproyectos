@@ -3,7 +3,6 @@
   class="fade-in-up bg-blue-50 py-20 px-6 md:px-12 lg:px-20"
 >
   <!-- Contacto -->
-
   <div class="max-w-7xl mx-auto text-center mb-10">
     <h2
       class="text-5xl md:text-6xl font-extrabold text-blue-900 tracking-tight mb-6"
@@ -12,19 +11,17 @@
     </h2>
     <p class="text-xl text-gray-700 mb-20 max-w-3xl mx-auto">
       Estamos a tu disposición para resolver dudas, colaborar en proyectos o
-      brindarte soluciones a medida. Puedes escribirnos directamente a través de
-      este formulario.
+      brindarte soluciones a medida. Puedes escribirnos por formulario, correo,
+      teléfono o visitarnos en nuestras oficinas.
     </p>
   </div>
+
   <div
     class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch"
   >
-    <!-- Formulario -->
-    <form
-      class="bg-white rounded-2xl shadow-xl p-8 md:p-10 space-y-8 flex flex-col justify-between"
-      method="POST"
-      action="mailto:info@tallerproyectos.com"
-      enctype="text/plain"
+    <!-- Formulario + Información de contacto -->
+    <div
+      class="bg-white rounded-2xl shadow-xl p-8 md:p-10 space-y-8 flex flex-col"
     >
       <div>
         <h2 class="text-3xl font-bold text-blue-900 mb-4 relative">
@@ -32,104 +29,206 @@
           <span class="block w-16 h-1 bg-cyan-400 mt-2"></span>
         </h2>
         <p class="text-gray-600 mb-6 text-sm">
-          Completa el formulario y nos pondremos en contacto contigo pronto.
+          Completa el formulario y te responderemos en menos de 24 horas.
         </p>
 
-        <div class="grid md:grid-cols-2 gap-4">
+        <!-- Formulario (sin action, listo para conectar con Formspark o EmailJS después) -->
+        <form
+          name="contacto"
+          method="POST"
+          data-netlify="true"
+          class="space-y-6"
+          netlify-honeypot="bot-field"
+          hidden
+        >
+          <input type="hidden" name="form-name" value="contacto" />
+          <input type="text" name="bot-field" hidden />
+        </form>
+
+        <form
+          name="contacto"
+          method="POST"
+          data-netlify="true"
+          class="space-y-6"
+        >
+          <input type="hidden" name="form-name" value="contacto" />
+          <div class="hidden">
+            <input name="bot-field" />
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label for="nombre" class="text-sm font-medium text-blue-800"
+                >Nombre *</label
+              >
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+                placeholder="Tu nombre"
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+            <div>
+              <label for="email" class="text-sm font-medium text-blue-800"
+                >Email *</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="tu@email.com"
+                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+          </div>
+
           <div>
-            <label for="nombre" class="text-sm font-medium text-blue-800"
-              >Nombre *</label
+            <label for="telefono" class="text-sm font-medium text-blue-800"
+              >Teléfono</label
             >
             <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              required
-              placeholder="Tu nombre"
+              type="tel"
+              id="telefono"
+              name="telefono"
+              placeholder="Opcional"
               class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
+
           <div>
-            <label for="email" class="text-sm font-medium text-blue-800"
-              >Email *</label
+            <label for="mensaje" class="text-sm font-medium text-blue-800"
+              >Mensaje *</label
             >
-            <input
-              type="email"
-              id="email"
-              name="email"
+            <textarea
+              id="mensaje"
+              name="mensaje"
               required
-              placeholder="tu@email.com"
+              rows="4"
+              placeholder="Cuéntanos en qué podemos ayudarte"
               class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
+            ></textarea>
           </div>
-        </div>
 
-        <div>
-          <label for="telefono" class="text-sm font-medium text-blue-800"
-            >Teléfono</label
-          >
-          <input
-            type="tel"
-            id="telefono"
-            name="telefono"
-            placeholder="Opcional"
-            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-        </div>
+          <div class="flex items-start gap-2">
+            <input
+              type="checkbox"
+              id="privacidad"
+              name="privacidad"
+              required
+              class="accent-blue-600 mt-1"
+            />
+            <label for="privacidad" class="text-sm text-gray-700">
+              Acepto la
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                class="text-blue-600 underline hover:text-blue-800"
+              >
+                política de privacidad
+              </a> y
+              <a
+                href="/legal-notice"
+                target="_blank"
+                class="text-blue-600 underline hover:text-blue-800"
+              >
+                aviso legal
+              </a>.
+            </label>
+          </div>
+          <p class="text-xs text-gray-500 mt-2">
+            La información enviada a través de este formulario no se almacena en
+            ninguna base de datos externa. Se envía directamente por correo
+            electrónico a nuestro equipo, con el único propósito de responder a
+            tu consulta.
+          </p>
+        </form>
 
-        <div>
-          <label for="mensaje" class="text-sm font-medium text-blue-800"
-            >Mensaje *</label
-          >
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            required
-            rows="4"
-            placeholder="Cuéntanos en qué podemos ayudarte"
-            class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-          ></textarea>
-        </div>
-
-        <div class="flex items-start gap-2">
-          <input
-            type="checkbox"
-            id="privacidad"
-            name="privacidad"
-            required
-            class="accent-blue-600 mt-1"
-          />
-
-          <label for="privacidad" class="text-sm text-gray-700">
-            Acepto la
-            <a
-              href="/privacy-policy"
-              target="_blank"
-              class="text-blue-600 underline hover:text-blue-800"
-            >
-              política de privacidad
-            </a> y <a
-              class="text-blue-600 underline hover:text-blue-800"
-              target="_blank"
-              href="legal-notice">aviso legal</a
-            > de este sitio web.
-          </label>
-        </div>
-        <p class="text-xs text-gray-500 mt-2">
-          La información enviada a través de este formulario no se almacena en
-          ninguna base de datos externa. Se envía directamente por correo
-          electrónico a nuestro equipo, con el único propósito de responder a tu
-          consulta.
-        </p>
+        <button
+          type="submit"
+          form="contacto"
+          class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md hover:scale-105 active:scale-100 transition-transform"
+        >
+          Enviar mensaje
+        </button>
       </div>
 
-      <button
-        type="submit"
-        class="mt-4 w-full bg-gradient-to-r cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md hover:scale-105 active:scale-100 transition-transform"
-      >
-        Enviar mensaje
-      </button>
-    </form>
+      <!-- Información de contacto adicional -->
+      <div class="border-t border-gray-200 pt-6 mt-4">
+        <h3 class="text-lg font-semibold text-blue-900 mb-4">
+          También puedes contactarnos directamente:
+        </h3>
+        <div class="space-y-3 text-sm text-gray-700">
+          <p class="flex items-start gap-3">
+            <svg
+              class="w-5 h-5 text-blue-600 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <span
+              ><strong>Dirección:</strong> Av. de Andalucía, 16, 04640 Pulpí, Almería</span
+            >
+          </p>
+          <p class="flex items-start gap-3">
+            <svg
+              class="w-5 h-5 text-blue-600 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              ></path>
+            </svg>
+            <span
+              ><strong>Teléfono:</strong>
+              <a href="tel:+34 950 46 54 66" class="hover:text-blue-600"
+                >+34 950 46 54 66</a
+              ></span
+            >
+          </p>
+          <p class="flex items-start gap-3">
+            <svg
+              class="w-5 h-5 text-blue-600 mt-0.5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+            <span
+              ><strong>Email:</strong>
+              <a href="" class="hover:text-blue-600"
+                >tallerdeproyectospulpi@gmail.com</a
+              ></span
+            >
+          </p>
+        </div>
+      </div>
+    </div>
 
     <!-- Mapa -->
     <div
@@ -143,7 +242,8 @@
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        class="w-full h-full"></iframe>
+        class="w-full h-full"
+        title="Ubicación de Taller de Proyectos SL en Pulpí, Almería"></iframe>
     </div>
   </div>
 </section>
