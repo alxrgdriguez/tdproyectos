@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SpinnerText from "./SpinnerText.tsx";
+import SpinnerText from "./SpinnerText";
 
-let hasLoadedOnce = false; // variable global para controlar si ya se mostró el spinner
+let hasLoadedOnce = false;
 
 const LoadingWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -16,23 +16,21 @@ const LoadingWrapper: React.FC<{ children: React.ReactNode }> = ({
       return;
     }
 
-    const minSpinnerTime = 2000; // 2 seconds
-    let startTime = Date.now();
+    const minSpinnerTime = 2000;
+    const startTime = Date.now();
 
     const onLoad = () => {
       const elapsed = Date.now() - startTime;
       const remaining = minSpinnerTime - elapsed;
-      if (remaining > 0) {
-        setTimeout(() => {
+
+      setTimeout(
+        () => {
           setShowSpinner(false);
           setContentVisible(true);
           hasLoadedOnce = true;
-        }, remaining);
-      } else {
-        setShowSpinner(false);
-        setContentVisible(true);
-        hasLoadedOnce = true;
-      }
+        },
+        Math.max(0, remaining)
+      );
     };
 
     if (document.readyState === "complete") {
@@ -43,7 +41,7 @@ const LoadingWrapper: React.FC<{ children: React.ReactNode }> = ({
     }
   }, []);
 
-  // Controlar scroll del body
+  // Deshabilita scroll si se muestra el spinner
   useEffect(() => {
     if (showSpinner) {
       document.body.style.overflow = "hidden";
@@ -51,15 +49,30 @@ const LoadingWrapper: React.FC<{ children: React.ReactNode }> = ({
       document.body.style.overflow = "auto";
     }
 
-    // Limpiar al desmontar
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [showSpinner]);
 
   return (
-    <>
-      {showSpinner && <SpinnerText />}
+    <div style={{ position: "relative" }}>
+      {/* Spinner superpuesto */}
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 50,
+          pointerEvents: showSpinner ? "auto" : "none",
+          opacity: showSpinner ? 1 : 0,
+          transition: "opacity 0.8s ease-in-out",
+          backgroundColor: "#fff",
+        }}
+        aria-hidden={!showSpinner}
+      >
+        <SpinnerText />
+      </div>
+
+      {/* Contenido de la web (visible desde el principio, pero con fade-in) */}
       <div
         style={{
           opacity: contentVisible ? 1 : 0,
@@ -69,7 +82,7 @@ const LoadingWrapper: React.FC<{ children: React.ReactNode }> = ({
       >
         {children}
       </div>
-    </>
+    </div>
   );
 };
 
