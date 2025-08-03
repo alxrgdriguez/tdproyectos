@@ -1,3 +1,7 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
 <footer class="bg-white py-16 border-t border-blue-200 shadow-inner">
   <div
     class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-evenly gap-12 text-center md:text-left"
@@ -8,15 +12,6 @@
         href="/"
         class="flex items-center justify-center md:justify-start gap-3 mb-4 group"
       >
-        <!-- <div class="flex items-center gap-2">
-          <span
-            class="text-4xl font-extrabold tracking-tight text-gray-900 group-hover:text-blue-700 transition"
-            >T</span
-          >
-          <span class="text-4xl font-extrabold text-blue-700 tracking-tight"
-            >P</span
-          >
-        </div> -->
         <span
           class="text-xl md:text-2xl font-bold text-gray-800 hover:text-blue-500"
           >Taller de Proyectos</span
@@ -77,7 +72,7 @@
             <path d="M12 11.5a2 2 0 100-4 2 2 0 000 4z"></path>
             <path d="M12 22s8-5.5 8-11a8 8 0 10-16 0c0 5.5 8 11 8 11z"></path>
           </svg>
-          Av. de Andalucía, 16, 04640 Pulpí, Almería
+          Avenida Andalucía, 16. 1º P5, 04640 Pulpí, Almería
         </li>
       </ul>
     </div>
@@ -114,6 +109,6 @@
   <div
     class="mt-10 border-t border-gray-200 pt-4 text-center text-sm text-gray-500"
   >
-    &copy; 2025 Taller de Proyectos Ingeniería y Delineación SL.
+    &copy; {currentYear} TALLER DE PROYECTOS INGENIERIA Y DELINEACION SL.
   </div>
 </footer>
