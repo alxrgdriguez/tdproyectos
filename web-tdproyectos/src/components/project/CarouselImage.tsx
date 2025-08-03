@@ -1,3 +1,5 @@
+import { memo, useEffect } from 'react';
+
 interface ImageData {
   src: string;
   alt: string;
@@ -9,8 +11,14 @@ interface CarouselImageProps {
   width: string;
 }
 
-export function CarouselImage({ image, onClick, width }: CarouselImageProps) {
+export const CarouselImage = memo(function CarouselImage({ image, onClick, width }: CarouselImageProps) {
+  // Añadir log para depuración
+  useEffect(() => {
+    console.log('Intentando cargar imagen:', image.src);
+  }, [image.src]);
+
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    console.error('Error al cargar la imagen:', image.src);
     const target = e.currentTarget;
     target.src =
       "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlbiBubyBkaXNwb25pYmxlPC90ZXh0Pjwvc3ZnPg==";
@@ -42,4 +50,4 @@ export function CarouselImage({ image, onClick, width }: CarouselImageProps) {
       </div>
     </div>
   );
-}
+});
