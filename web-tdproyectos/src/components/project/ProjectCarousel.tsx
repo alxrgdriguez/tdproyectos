@@ -4,19 +4,58 @@ import { CarouselImage } from "./CarouselImage";
 import { CarouselIndicators } from "./CarouselIndicators";
 
 const images = [
-  { src: "/images/3d-models/A1.webp", alt: "Casa render 1" },
-  { src: "/images/3d-models/B1.webp", alt: "Casa render 2" },
-  { src: "/images/3d-models/C1.webp", alt: "Casa render 3" },
-  { src: "/images/3d-models/D1.webp", alt: "Casa render 4" },
-  { src: "/images/3d-models/1A.webp", alt: "Casa render 5" },
-  { src: "/images/3d-models/2A.webp", alt: "Casa render 6" },
-  { src: "/images/3d-models/2A_2.webp", alt: "Casa render 7" },
-  { src: "/images/3d-models/3A.webp", alt: "Casa render 8" },
-  { src: "/images/3d-models/4A.webp", alt: "Casa render 9" },
-  { src: "/images/3d-models/5A.webp", alt: "Casa render 10" },
-  { src: "/images/3d-models/6A.webp", alt: "Casa render 11" },
-  { src: "/images/3d-models/7A.webp", alt: "Casa render 12" },
-  { src: "/images/3d-models/8A.webp", alt: "Casa render 13" },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/A1.webp?updatedAt=1754215930365",
+    alt: "Casa render 1",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/B1.webp?updatedAt=1754215932573",
+    alt: "Casa render 2",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/C1.webp?updatedAt=1754215932720",
+    alt: "Casa render 3",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/D1.webp?updatedAt=1754215932707",
+    alt: "Casa render 4",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/1A.webp?updatedAt=1754215929724",
+    alt: "Casa render 5",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/2A.webp?updatedAt=1754215929705",
+    alt: "Casa render 6",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/2A_2.webp?updatedAt=1754215929829",
+    alt: "Casa render 7",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/3A.webp?updatedAt=1754215929903",
+    alt: "Casa render 8",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/4A.webp?updatedAt=1754215930184",
+    alt: "Casa render 9",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/5A.webp?updatedAt=1754215930131",
+    alt: "Casa render 10",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/6A.webp?updatedAt=1754215930113",
+    alt: "Casa render 11",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/7A.webp?updatedAt=1754215929845",
+    alt: "Casa render 12",
+  },
+  {
+    src: "https://ik.imagekit.io/proyectostd/images/3d-models/8A.webp?updatedAt=1754215929945",
+    alt: "Casa render 13",
+  },
 ];
 
 export default function ProjectCarousel() {
