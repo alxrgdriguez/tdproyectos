@@ -1,3 +1,7 @@
+---
+import ContactFormReact from "./ContactFormReact";
+---
+
 <section
   id="contacto"
   class="fade-in-up bg-blue-50 py-20 px-6 md:px-12 lg:px-20"
@@ -33,106 +37,7 @@
         </p>
 
         <!-- FORMULARIO BASIN -->
-        <form
-          action={import.meta.env.PUBLIC_ENDPOINT_BASIN}
-          method="POST"
-          class="space-y-6"
-        >
-          <div class="grid md:grid-cols-2 gap-4">
-            <div>
-              <label for="nombre" class="text-sm font-medium text-blue-800"
-                >Nombre *</label
-              >
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                required
-                placeholder="Tu nombre"
-                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-            <div>
-              <label for="email" class="text-sm font-medium text-blue-800"
-                >Email *</label
-              >
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                placeholder="tu@email.com"
-                class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label for="telefono" class="text-sm font-medium text-blue-800"
-              >Teléfono</label
-            >
-            <input
-              type="tel"
-              id="telefono"
-              name="telefono"
-              placeholder="Opcional"
-              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
-          </div>
-
-          <div>
-            <label for="mensaje" class="text-sm font-medium text-blue-800"
-              >Mensaje *</label
-            >
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              required
-              rows="4"
-              placeholder="Cuéntanos en qué podemos ayudarte"
-              class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-            ></textarea>
-          </div>
-
-          <div class="flex items-start gap-2">
-            <input
-              type="checkbox"
-              id="privacidad"
-              name="privacidad"
-              required
-              class="accent-blue-600 mt-1"
-            />
-            <label for="privacidad" class="text-sm text-gray-700">
-              Acepto la
-              <a
-                href="/privacy-policy"
-                target="_blank"
-                class="text-blue-600 underline hover:text-blue-800"
-                >política de privacidad</a
-              >
-              y
-              <a
-                href="/legal-notice"
-                target="_blank"
-                class="text-blue-600 underline hover:text-blue-800"
-                >aviso legal</a
-              >.
-            </label>
-          </div>
-
-          <p class="text-xs text-gray-500 mt-2">
-            La información enviada a través de este formulario no se almacena en
-            ninguna base de datos externa. Se envía directamente por correo
-            electrónico a nuestro equipo.
-          </p>
-
-          <button
-            type="submit"
-            class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md hover:scale-105 active:scale-100 transition-transform"
-          >
-            Enviar mensaje
-          </button>
-        </form>
+        <ContactFormReact client:load />
       </div>
 
       <!-- Contacto directo -->
