@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -15,6 +15,11 @@ export default function ContactForm() {
   } = useForm<ContactFormData>({
     resolver: zodResolver(ContactFormSchema),
   });
+
+  const [formStatus, setFormStatus] = useState<{
+    message: string;
+    type: "success" | "error" | null;
+  }>({ message: "", type: null });
 
   const onSubmit = async (data: ContactFormData) => {
     try {
@@ -33,13 +38,28 @@ export default function ContactForm() {
 
       if (!res.ok) throw new Error("Error al enviar el formulario");
 
-      alert("Mensaje enviado con éxito.");
+      setFormStatus({
+        message: "¡Mensaje enviado con éxito! Te responderemos pronto.",
+        type: "success",
+      });
       reset();
     } catch (err) {
-      alert("Hubo un problema al enviar el formulario.");
+      setFormStatus({
+        message: "Hubo un problema al enviar el formulario. Intenta de nuevo.",
+        type: "error",
+      });
     }
   };
 
+  // Limpiar el mensaje después de 5 segundos
+  useEffect(() => {
+    if (formStatus.message) {
+      const timeout = setTimeout(() => {
+        setFormStatus({ message: "", type: null });
+      }, 5000);
+      return () => clearTimeout(timeout);
+    }
+  }, [formStatus]);
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid md:grid-cols-2 gap-4">
@@ -106,11 +126,21 @@ export default function ContactForm() {
         />
         <label htmlFor="privacidad">
           Acepto la{" "}
-          <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+          <a
+            href="/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-blue-500"
+          >
             política de privacidad
           </a>{" "}
           y{" "}
-          <a href="/legal-notice" target="_blank" rel="noopener noreferrer">
+          <a
+            href="/legal-notice"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline text-blue-500"
+          >
             aviso legal
           </a>
           .
@@ -118,6 +148,19 @@ export default function ContactForm() {
       </div>
       {errors.privacidad && (
         <p className="text-red-600">{errors.privacidad.message}</p>
+      )}
+
+      {/* Mensaje de estado */}
+      {formStatus.message && (
+        <p
+          className={`text-sm font-medium px-4 py-2 rounded-md ${
+            formStatus.type === "success"
+              ? "bg-green-100 text-green-800 border border-green-300"
+              : "bg-red-100 text-red-800 border border-red-300"
+          }`}
+        >
+          {formStatus.message}
+        </p>
       )}
 
       <button

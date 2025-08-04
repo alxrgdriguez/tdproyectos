@@ -12,6 +12,9 @@ const spanishPhoneRegex = /^(\+34|34)?[6-9]\d{8}$/;
 // Validar nombre
 const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+$/;
 
+// Validar mensaje 
+const messageRegex = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s.,;:'"¡!¿?()\[\]\-]+$/;
+
 // Validar email y bloquear dominios temporales
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -55,7 +58,12 @@ export const ContactFormSchema = z.object({
   mensaje: z
     .string({ required_error: 'El mensaje es obligatorio para poder ayudarte.' })
     .min(10, 'El mensaje debe tener al menos 10 caracteres.')
-    .max(2000, 'El mensaje no puede superar los 2000 caracteres.'),
+    .max(2000, 'El mensaje no puede superar los 2000 caracteres.')
+    .regex(
+      messageRegex,
+      'El mensaje solo puede contener letras, números, espacios y puntuación básica. No se permiten símbolos especiales.'
+    ),
+
 
   privacidad: z
     .boolean()
