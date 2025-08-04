@@ -2,7 +2,7 @@
   id="contacto"
   class="fade-in-up bg-blue-50 py-20 px-6 md:px-12 lg:px-20"
 >
-  <!-- Contacto -->
+  <!-- Cabecera -->
   <div class="max-w-7xl mx-auto text-center mb-10">
     <h2
       class="text-5xl md:text-6xl font-extrabold text-blue-900 tracking-tight mb-6"
@@ -19,7 +19,7 @@
   <div
     class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch"
   >
-    <!-- Formulario + Información de contacto -->
+    <!-- Formulario + Info -->
     <div
       class="bg-white rounded-2xl shadow-xl p-8 md:p-10 space-y-8 flex flex-col"
     >
@@ -32,30 +32,12 @@
           Completa el formulario y te responderemos lo antes posible.
         </p>
 
-        <!-- Formulario (sin action, listo para conectar con Formspark o EmailJS después) -->
+        <!-- FORMULARIO BASIN -->
         <form
-          name="contacto"
+          action={import.meta.env.PUBLIC_ENDPOINT_BASIN}
           method="POST"
-          data-netlify="true"
-          class="space-y-6"
-          netlify-honeypot="bot-field"
-          hidden
-        >
-          <input type="hidden" name="form-name" value="contacto" />
-          <input type="text" name="bot-field" hidden />
-        </form>
-
-        <form
-          name="contacto"
-          method="POST"
-          data-netlify="true"
           class="space-y-6"
         >
-          <input type="hidden" name="form-name" value="contacto" />
-          <div class="hidden">
-            <input name="bot-field" />
-          </div>
-
           <div class="grid md:grid-cols-2 gap-4">
             <div>
               <label for="nombre" class="text-sm font-medium text-blue-800"
@@ -126,36 +108,34 @@
                 href="/privacy-policy"
                 target="_blank"
                 class="text-blue-600 underline hover:text-blue-800"
+                >política de privacidad</a
               >
-                política de privacidad
-              </a> y
+              y
               <a
                 href="/legal-notice"
                 target="_blank"
                 class="text-blue-600 underline hover:text-blue-800"
-              >
-                aviso legal
-              </a>.
+                >aviso legal</a
+              >.
             </label>
           </div>
+
           <p class="text-xs text-gray-500 mt-2">
             La información enviada a través de este formulario no se almacena en
             ninguna base de datos externa. Se envía directamente por correo
-            electrónico a nuestro equipo, con el único propósito de responder a
-            tu consulta.
+            electrónico a nuestro equipo.
           </p>
-        </form>
 
-        <button
-          type="submit"
-          form="contacto"
-          class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md hover:scale-105 active:scale-100 transition-transform"
-        >
-          Enviar mensaje
-        </button>
+          <button
+            type="submit"
+            class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md hover:scale-105 active:scale-100 transition-transform"
+          >
+            Enviar mensaje
+          </button>
+        </form>
       </div>
 
-      <!-- Información de contacto adicional -->
+      <!-- Contacto directo -->
       <div class="border-t border-gray-200 pt-6 mt-4">
         <h3 class="text-lg font-semibold text-blue-900 mb-4">
           También puedes contactarnos directamente:
@@ -201,7 +181,7 @@
             </svg>
             <span
               ><strong>Teléfono:</strong>
-              <a href="tel:+34 950 46 54 66" class="hover:text-blue-600"
+              <a href="tel:+34950465466" class="hover:text-blue-600"
                 >+34 950 46 54 66</a
               ></span
             >
@@ -222,8 +202,9 @@
             </svg>
             <span
               ><strong>Email:</strong>
-              <a href="" class="hover:text-blue-600"
-                >tallerdeproyectospulpi@gmail.com</a
+              <a
+                href="mailto:tallerdeproyectospulpi@gmail.com"
+                class="hover:text-blue-600">tallerdeproyectospulpi@gmail.com</a
               ></span
             >
           </p>
