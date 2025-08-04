@@ -1,33 +1,58 @@
 import { z } from 'zod';
-import { DISPOSABLE_EMAIL_DOMAINS } from '../lib/disposableEmailDomains';
+import disposableDomains from 'disposable-email-domains';
 
-// Función auxiliar limpiar teléfono
+// Función auxiliar para limpiar teléfono
 const cleanPhone = (value: string): string => {
   return value.replace(/\s|[-()]/g, '');
 };
 
-// Validar solo números españoles 9 dígitos que empiecen por 6, 7, 8 o 9 (+34 opcional)
+// Regex para números españoles válidos (con o sin +34)
 const spanishPhoneRegex = /^(\+34|34)?[6-9]\d{8}$/;
 
-// Validar nombre
+// Regex para nombre
 const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\s\-']+$/;
 
-// Validar mensaje 
+// Regex para mensaje
 const messageRegex = /^[a-zA-Z0-9áéíóúÁÉÍÓÚñÑüÜ\s.,;:'"¡!¿?()\[\]\-]+$/;
 
-// Validar email y bloquear dominios temporales
+// Regex básico para email
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const isDisposableEmail = (email: string): boolean => {
-  try {
-    const domain = email.toLowerCase().split('@')[1];
-    return domain ? DISPOSABLE_EMAIL_DOMAINS.includes(domain as any) : false;
-  } catch {
-    return false;
-  }
+// Dominios permitidos
+export const allowedDomains = [
+  'gmail.com',
+  'hotmail.com',
+  'outlook.com',
+  'live.com',
+  'icloud.com',
+  'yahoo.com',
+  'msn.com',
+  'me.com',
+  'aol.com',
+  'protonmail.com',
+  'tutanota.com',
+  'mail.com',
+  'gmx.com',
+  'gmx.es',
+  'gmx.de',
+  'zoho.com',
+  'fastmail.com',
+];
+
+
+// Función para comprobar si el dominio es permitido
+const isAllowedEmailDomain = (email: string) => {
+  const domain = email.toLowerCase().split('@')[1];
+  return allowedDomains.includes(domain);
 };
 
-// 6. Esquema principal
+// Función para comprobar si es un email temporal
+const isDisposable = (email: string) => {
+  const domain = email.toLowerCase().split('@')[1];
+  return disposableDomains.includes(domain);
+};
+
+// Esquema del formulario de contacto
 export const ContactFormSchema = z.object({
   nombre: z
     .string({ required_error: 'El nombre es obligatorio.' })
@@ -40,8 +65,11 @@ export const ContactFormSchema = z.object({
     .string({ required_error: 'El email es obligatorio.' })
     .email('Debe ser un email válido.')
     .regex(emailRegex, 'Formato de email no válido.')
-    .refine((email) => !isDisposableEmail(email), {
+    .refine((email) => !isDisposable(email), {
       message: 'No se permiten correos temporales. Usa una dirección de correo permanente.',
+    })
+    .refine((email) => isAllowedEmailDomain(email), {
+      message: 'Solo se permiten correos de gmail.com, hotmail.com u outlook.com.',
     })
     .transform((email) => email.toLowerCase()),
 
@@ -63,7 +91,6 @@ export const ContactFormSchema = z.object({
       messageRegex,
       'El mensaje solo puede contener letras, números, espacios y puntuación básica. No se permiten símbolos especiales.'
     ),
-
 
   privacidad: z
     .boolean()
