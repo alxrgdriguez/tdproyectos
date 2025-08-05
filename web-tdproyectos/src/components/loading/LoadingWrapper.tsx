@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import SpinnerText from "./SpinnerText";
+import SpinnerText from "./SpinnerText.tsx";
 
-let hasLoadedOnce = false;
+let hasLoadedOnce = false; // variable global simple, OK si no hay SSR
 
 const LoadingWrapper: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -17,21 +17,24 @@ const LoadingWrapper: React.FC<{ children: React.ReactNode }> = ({
       return;
     }
 
-    const minSpinnerTime = 2000;
+    const minSpinnerTime = 1200;
     const startTime = Date.now();
 
     const onLoad = () => {
       const elapsed = Date.now() - startTime;
       const remaining = minSpinnerTime - elapsed;
 
-      timeoutRef.current = window.setTimeout(
-        () => {
+      if (remaining > 0) {
+        timeoutRef.current = window.setTimeout(() => {
           setShowSpinner(false);
           setContentVisible(true);
           hasLoadedOnce = true;
-        },
-        remaining > 0 ? remaining : 0
-      );
+        }, remaining);
+      } else {
+        setShowSpinner(false);
+        setContentVisible(true);
+        hasLoadedOnce = true;
+      }
     };
 
     if (document.readyState === "complete") {
@@ -57,13 +60,15 @@ const LoadingWrapper: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <>
-      {showSpinner && <SpinnerText fadeOut={contentVisible} />}
+      {showSpinner && <SpinnerText />}
       <div
         aria-busy={showSpinner}
+        data-loaded={contentVisible}
         style={{
           opacity: contentVisible ? 1 : 0,
-          transition: "opacity 1s ease-in-out",
+          transition: "opacity 0.4s ease-in-out", // un poco más lenta para suavizar
           minHeight: "100vh",
+          backgroundColor: "transparent", // sin fondo explícito
         }}
       >
         {children}

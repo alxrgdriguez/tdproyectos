@@ -5,12 +5,12 @@ const SpinnerText: React.FC<{ fadeOut?: boolean }> = ({ fadeOut = false }) => {
     <div
       role="status"
       aria-live="polite"
-      className={`fixed inset-0 z-[9999] flex flex-col justify-center items-center bg-gray-900 text-white transition-opacity duration-700 ${
+      className={`fixed inset-0 z-[9999] flex flex-col justify-center items-center bg-white text-white transition-opacity duration-700 ${
         fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
     >
       <svg
-        className="w-28 h-28 text-blue-400 drop-shadow-lg"
+        className="w-28 h-28 text-blue-900 drop-shadow-lg"
         viewBox="0 0 64 64"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ const SpinnerText: React.FC<{ fadeOut?: boolean }> = ({ fadeOut = false }) => {
           style={{ animationDelay: "0.75s", transformOrigin: "50% 50%" }}
         />
       </svg>
-      <p className="mt-6 text-xl font-semibold tracking-wide animate-fade-in text-blue-400">
+      <p className="mt-6 text-xl font-semibold tracking-wide animate-fade-in text-blue-900">
         Taller de Proyectos
       </p>
 
