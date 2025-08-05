@@ -2,50 +2,91 @@
   id="inicio"
   class="relative h-screen flex flex-col items-center justify-center text-center text-white overflow-hidden pt-16"
 >
-  <!-- offset para ancla -->
-  <div class="absolute -top-16 h-16 w-full pointer-events-none"></div>
+  <!-- Offset para ancla (accesibilidad) -->
+  <div
+    class="absolute -top-16 h-16 w-full pointer-events-none"
+    aria-hidden="true"
+  >
+  </div>
 
-  <!-- Video -->
+  <!-- Video de fondo -->
   <video
     autoplay
     muted
     loop
     playsinline
-    preload="auto"
+    preload="metadata"
     class="absolute inset-0 w-full h-full object-cover"
+    aria-hidden="true"
   >
     <source
       src="https://ik.imagekit.io/proyectostd/videos/video_Plano.mp4?updatedAt=1754215990237"
       type="video/mp4"
     />
-    Tu navegador no soporta videos HTML5.
+    Tu navegador no soporta el elemento de video.
   </video>
 
-  <div class="absolute inset-0 bg-blue-900/70 backdrop-blur-sm"></div>
+  <!-- Overlay: más limpio y con gradiente para mejor contraste -->
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/60 to-gray-900/70"
+  >
+  </div>
 
-  <div class="relative z-10" data-aos="fade-down">
-    <h1 class="text-5xl md:text-7xl font-extrabold drop-shadow-lg mb-6">
-      Estudio de Arquitectura e Ingeniería
+  <!-- Contenido principal -->
+  <div class="relative z-10 px-6 max-w-6xl mx-auto" data-aos="fade-up">
+    <h1
+      class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 drop-shadow-md"
+    >
+      Estudio de Arquitectura<br /><span class="text-cyan-300 font-bold"
+        >e Ingeniería</span
+      >
     </h1>
-    <p class="mt-2 text-2xl md:text-3xl font-light max-w-2xl mx-auto">
-      Soluciones técnicas e innovadoras
+    <p
+      class="mt-4 text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed drop-shadow"
+    >
+      Soluciones técnicas e innovadoras, diseñadas con precisión y compromiso.
     </p>
+
+    <!-- Botón de contacto mejorado -->
     <a
       href="#contacto"
-      class="group mt-10 inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-cyan-600 to-blue-700 shadow-xl hover:shadow-2xl hover:scale-110 transition-all duration-300 relative overflow-hidden animate-flicker"
+      class="group mt-10 relative inline-flex items-center gap-4 px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-700 shadow-2xl hover:shadow-3xl hover:scale-110 active:scale-105 transition-all duration-300 ease-out focus:outline-none focus:ring-4 focus:ring-cyan-400/40 focus:ring-offset-0 overflow-hidden"
+      aria-label="Contacta por teléfono o formulario"
     >
-      <span class="relative z-10">📧 Contacta con nosotros</span>
+      <!-- Texto principal -->
+      <span class="relative z-10 whitespace-nowrap text-lg">
+        📞 <strong>Llámanos</strong> o escríbenos
+      </span>
+
+      <!-- Brillo lateral (efecto de barrido) -->
       <span
-        class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition duration-300"
+        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none"
+      ></span>
+
+      <!-- Resplandor interno sutil -->
+      <span
+        class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-500 pointer-events-none"
       ></span>
     </a>
   </div>
 
+  <!-- Indicador de scroll animado y estilizado -->
   <div
-    class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10 animate-bounce"
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center text-white/80 group"
+    aria-hidden="true"
   >
-    <svg width="32" height="32" fill="none" stroke="white" stroke-width="2"
-      ><path d="M16 4v24M8 20l8 8 8-8"></path></svg
-    >
+    <span class="text-xs uppercase tracking-wider mb-2 opacity-90"></span>
+    <div class="animate-bounce">
+      <svg
+        width="24"
+        height="24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        class="transition-transform duration-300 group-hover:translate-y-1"
+      >
+        <path d="M12 6v12M6 12l6 6 6-6"></path>
+      </svg>
+    </div>
   </div>
 </section>
