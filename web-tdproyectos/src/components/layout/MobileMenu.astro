@@ -21,12 +21,12 @@
   aria-label="Abrir menú"
 >
   <span
-    class="block w-7 h-1 bg-blue-700 rounded transition-all duration-300 mb-1"
+    class="block w-7 h-1 bg-blue-400 rounded transition-all duration-300 mb-1"
   ></span>
   <span
-    class="block w-7 h-1 bg-blue-700 rounded transition-all duration-300 mb-1"
+    class="block w-7 h-1 bg-blue-400 rounded transition-all duration-300 mb-1"
   ></span>
-  <span class="block w-7 h-1 bg-blue-700 rounded transition-all duration-300"
+  <span class="block w-7 h-1 bg-blue-400 rounded transition-all duration-300"
   ></span>
 </button>
 
@@ -147,8 +147,10 @@
     const closeBtn = document.getElementById("close-menu-btn");
     const menu = document.getElementById("mobile-menu");
 
-    const openMenu = () => {
-      menu.classList.remove("opacity-0", "pointer-events-none", "scale-95");
+    const openMenu = () => { 
+      if (menu) {
+ menu.classList.remove("opacity-0", "pointer-events-none", "scale-95");
+      }
       menu.classList.add("opacity-100", "scale-100");
       btn.classList.add("open");
       document.body.style.overflow = "hidden";
@@ -156,7 +158,9 @@
 
     const closeMenu = () => {
       menu.classList.add("opacity-0", "pointer-events-none", "scale-95");
-      menu.classList.remove("opacity-100", "scale-100");
+      if (menu) {
+ menu.classList.remove("opacity-100", "scale-100");
+      }
       btn.classList.remove("open");
       document.body.style.overflow = "";
     };
