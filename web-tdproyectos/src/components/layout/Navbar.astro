@@ -1,98 +1,110 @@
 ---
 import MobileMenu from "./MobileMenu.astro";
 
-// Definición de enlaces
 const navLinks = [
-  { href: "#inicio", label: "Inicio", current: true },
-  { href: "#sobre-nosotros", label: "Sobre Nosotros", current: false },
-  { href: "#servicios", label: "Servicios", current: false },
-  { href: "#proyectos", label: "Proyectos", current: false },
-  { href: "#contacto", label: "Contacto", current: false },
+  { href: "#inicio", label: "Inicio" },
+  { href: "#sobre-nosotros", label: "Sobre Nosotros" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#proyectos", label: "Proyectos" },
+  { href: "#contacto", label: "Contacto" },
 ];
 
 const phone = "+34 950 46 54 66";
 ---
 
 <nav
-  class="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-50 font-sans text-gray-800 dark:text-white transition-colors duration-300"
-  role="navigation"
-  aria-label="Navegación principal"
+  class="bg-gray-900 sticky top-0 z-50 shadow-sm border-b border-gray-800 transition-all duration-300"
 >
+  <!-- Top bar -->
   <div
-    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center"
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between"
   >
+    <!-- Mobile menu -->
+    <div class="lg:hidden">
+      <MobileMenu navLinks={navLinks} phone={phone} />
+    </div>
+
     <!-- Logo -->
-    <a href="/" class="flex flex-col group">
-      <span
-        class="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-blue-700 to-blue-900 dark:from-blue-500 dark:to-blue-700 bg-clip-text text-transparent transition-all duration-500"
-      >
-        TALLER DE PROYECTOS
-      </span>
-      <span
-        class="text-xs sm:text-sm ml-1 font-semibold tracking-wide uppercase text-gray-500 dark:text-gray-400"
-      >
-        Arquitectura & Ingeniería
-      </span>
-    </a>
+    <div class="flex-1 flex justify-center lg:justify-start">
+      <a href="/" class="text-center group">
+        <h1
+          class="text-2xl md:text-3xl font-extrabold text-white tracking-tight group-hover:tracking-wider transition-all duration-300"
+        >
+          TALLER DE PROYECTOS
+        </h1>
+        <p
+          class="text-xs md:text-sm text-blue-400 uppercase font-semibold tracking-widest"
+        >
+          Estudio de Arquitectura E Ingeniería
+        </p>
+      </a>
+    </div>
 
-    <!-- Menú Desktop -->
-    <ul class="hidden lg:flex space-x-10 text-lg font-medium">
+    <!-- Contacto Teléfono -->
+    <div class="hidden lg:flex items-center gap-4">
+      <a
+        href={`tel:${phone.replace(/\s/g, "")}`}
+        class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold tracking-wide"
+        aria-label={`Llamar al ${phone}`}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 5a2 2 0 012-2h3.6a1 1 0 01.95.68l1.22 3.64a1 1 0 01-.24 1.05l-1.94 1.94a11.05 11.05 0 005.65 5.65l1.94-1.94a1 1 0 011.05-.24l3.64 1.22a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C10.4 21 3 13.6 3 5v-1z"
+          ></path>
+        </svg>
+        {phone}
+      </a>
+
+      <a
+        href="#contacto"
+        class="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition-all text-sm font-semibold tracking-wide shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      >
+        Solicita una Consulta
+      </a>
+    </div>
+  </div>
+
+  <!-- Desktop navigation -->
+  <div class="hidden lg:flex justify-center border-t border-gray-800">
+    <ul
+      class="flex space-x-10 py-3 text-sm font-semibold uppercase tracking-wider"
+    >
       {
-        navLinks.map((link) => (
-          <li>
-            <a
+        navLinks.map((link: { href: string; label: string }) => (
+          <li class="group relative" key={link.href}>
+            <a 
               href={link.href}
-              aria-current={link.current ? "page" : undefined}
-              class="relative inline-block px-1 py-2 rounded group
-                  text-gray-700 dark:text-gray-300
-                  hover:text-blue-600 dark:hover:text-blue-400
-                    aria-current:page:text-blue-700 dark:aria-current:page:text-blue-400
-                    focus:outline-none focus:ring-4 focus:ring-blue-100 dark:focus:ring-blue-900/50 focus:ring-offset-2 dark:focus:ring-offset-gray-900
-                    transition-all duration-300"
+              class="flex items-center gap-1 text-gray-300 hover:text-blue-400 transition-colors duration-200"
             >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 opacity-70 group-hover:opacity-100 transition-opacity"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
               {link.label}
-
-              <span
-                class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500/0 via-blue-500 to-blue-500/0 
-                       rounded-full pointer-events-none
-                       transform scale-x-0 
-                       group-hover:scale-x-100
-                       aria-current:page:scale-x-100
-                       transition-transform duration-500"
-              />
             </a>
+            <span class="absolute left-0 -bottom-1 h-0.5 w-full bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
           </li>
         ))
       }
     </ul>
-
-    <!-- Teléfono -->
-    <a
-      href={`tel:${phone.replace(/\s/g, "")}`}
-      class="hidden lg:flex items-center gap-2.5 text-blue-700 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 focus:outline-none focus:ring-0 transition-all duration-300"
-      aria-label={`Llamar al ${phone}`}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M7 4h10a1 1 0 011 1v14a1 1 0 01-1 1H7a1 1 0 01-1-1V5a1 1 0 011-1zM11 17h2"
-        ></path>
-      </svg>
-      <span class="text-base font-semibold tracking-wide">{phone}</span>
-    </a>
-
-    <!-- Menú Móvil -->
-    <div class="lg:hidden">
-      <MobileMenu client:load />
-    </div>
   </div>
 </nav>

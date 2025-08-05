@@ -1,20 +1,21 @@
 import React from "react";
 
-const SpinnerPro: React.FC = () => {
+const SpinnerText: React.FC<{ fadeOut?: boolean }> = ({ fadeOut = false }) => {
   return (
     <div
       role="status"
       aria-live="polite"
-      className="flex flex-col justify-center items-center h-screen bg-white"
+      className={`fixed inset-0 z-[9999] flex flex-col justify-center items-center bg-gray-900 text-white transition-opacity duration-700 ${
+        fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}
     >
       <svg
-        className="w-28 h-28 text-blue-900 drop-shadow-lg"
+        className="w-28 h-28 text-blue-400 drop-shadow-lg"
         viewBox="0 0 64 64"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
-        {/* Animated circle stroke */}
         <circle
           cx="32"
           cy="32"
@@ -26,8 +27,6 @@ const SpinnerPro: React.FC = () => {
           strokeLinecap="round"
           className="animate-spin-stroke"
         />
-
-        {/* Compass center circle */}
         <circle
           cx="32"
           cy="32"
@@ -37,8 +36,6 @@ const SpinnerPro: React.FC = () => {
           fill="none"
           className="drop-shadow-md"
         />
-
-        {/* Compass needles */}
         <line
           x1="32"
           y1="32"
@@ -48,6 +45,7 @@ const SpinnerPro: React.FC = () => {
           strokeWidth="2"
           strokeLinecap="round"
           className="animate-needle-rotate"
+          style={{ transformOrigin: "50% 50%" }}
         />
         <line
           x1="32"
@@ -58,51 +56,51 @@ const SpinnerPro: React.FC = () => {
           strokeWidth="2"
           strokeLinecap="round"
           className="animate-needle-rotate"
-          style={{ animationDelay: "0.75s" }}
+          style={{ animationDelay: "0.75s", transformOrigin: "50% 50%" }}
         />
       </svg>
-      <p className="mt-6 text-xl font-semibold text-blue-900 tracking-wide animate-fade-in">
+      <p className="mt-6 text-xl font-semibold tracking-wide animate-fade-in text-blue-400">
         Taller de Proyectos
       </p>
 
       <style>
-        {`@keyframes spinStroke {
-          0% {
-            stroke-dashoffset: 175.84;
-          }
-          50% {
-            stroke-dashoffset: 0;
-          }
-          100% {
-            stroke-dashoffset: 175.84;
-          }
+        {`
+        @keyframes spinStroke {
+          0% { stroke-dashoffset: 175.84; }
+          50% { stroke-dashoffset: 0; }
+          100% { stroke-dashoffset: 175.84; }
         }
+
         @keyframes needleRotate {
-          0%, 100% {
-            transform: rotate(0deg);
-          }
-          50% {
-            transform: rotate(45deg);
-          }
+          0%, 100% { transform: rotate(0deg); }
+          50% { transform: rotate(45deg); }
         }
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
+
+        @keyframes fade-in {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
+
         .animate-spin-stroke {
           animation: spinStroke 2.5s ease-in-out infinite;
           transform-origin: 50% 50%;
         }
+
         .animate-needle-rotate {
           animation: needleRotate 3s ease-in-out infinite;
           transform-origin: 50% 50%;
         }
+
         .animate-fade-in {
-          animation: fadeIn 1.5s ease forwards;
+          animation: fade-in 1.5s ease forwards;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-spin-stroke,
+          .animate-needle-rotate,
+          .animate-fade-in {
+            animation: none !important;
+          }
         }
       `}
       </style>
@@ -110,4 +108,4 @@ const SpinnerPro: React.FC = () => {
   );
 };
 
-export default SpinnerPro;
+export default SpinnerText;

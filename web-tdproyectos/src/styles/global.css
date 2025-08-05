@@ -3,7 +3,9 @@
 html,
 body {
     scroll-padding-top: 100px;
-    /* Ajusta a la altura del navbar */
+    background-color: #0f172a;
+    /* = Tailwind's bg-gray-900 */
+    color: white;
 }
 
 @keyframes flicker {
