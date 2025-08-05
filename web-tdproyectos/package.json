@@ -21,9 +21,7 @@
     "react-dom": "^19.1.1",
     "react-hook-form": "^7.62.0",
     "react-photo-view": "^1.2.7",
-    "resend": "^4.7.0",
     "tailwindcss": "^4.1.11",
-    "vite-imagetools": "^7.1.0",
-    "zod": "^3.25.76"
+    "vite-imagetools": "^7.1.0"
   }
 }

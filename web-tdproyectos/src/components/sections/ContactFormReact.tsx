@@ -1,55 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  ContactFormSchema,
-  type ContactFormData,
-} from "../../schemas/contact.schema";
 
 export default function ContactForm() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-    reset,
-  } = useForm<ContactFormData>({
-    resolver: zodResolver(ContactFormSchema),
-  });
-
   const [formStatus, setFormStatus] = useState<{
     message: string;
     type: "success" | "error" | null;
   }>({ message: "", type: null });
-
-  const onSubmit = async (data: ContactFormData) => {
-    try {
-      const formData = new URLSearchParams();
-      Object.entries(data).forEach(([key, value]) =>
-        formData.append(key, value)
-      );
-
-      const res = await fetch(import.meta.env.PUBLIC_ENDPOINT_BASIN, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: formData.toString(),
-      });
-
-      if (!res.ok) throw new Error("Error al enviar el formulario");
-
-      setFormStatus({
-        message: "¡Mensaje enviado con éxito! Te responderemos pronto.",
-        type: "success",
-      });
-      reset();
-    } catch (err) {
-      setFormStatus({
-        message: "Hubo un problema al enviar el formulario. Intenta de nuevo.",
-        type: "error",
-      });
-    }
-  };
 
   // Limpiar el mensaje después de 5 segundos
   useEffect(() => {
@@ -61,66 +16,48 @@ export default function ContactForm() {
     }
   }, [formStatus]);
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form className="space-y-6">
       <div className="grid md:grid-cols-2 gap-4">
         <div>
           <label htmlFor="nombre">Nombre *</label>
           <input
-            {...register("nombre")}
+            name="nombre"
             id="nombre"
             className="w-full px-4 py-3 border rounded"
             placeholder="Tu nombre"
           />
-          {errors.nombre && (
-            <p className="text-red-600">{errors.nombre.message}</p>
-          )}
+
+          <p className="text-red-600">{"Mesanje de error"}</p>
         </div>
         <div>
           <label htmlFor="email">Email *</label>
           <input
-            {...register("email")}
+            name="email"
             id="email"
             type="email"
             className="w-full px-4 py-3 border rounded"
             placeholder="tu@email.com"
           />
-          {errors.email && (
-            <p className="text-red-600">{errors.email.message}</p>
-          )}
+          <p className="text-red-600">{"Mesanje de error"}</p>
         </div>
-      </div>
-
-      <div>
-        <label htmlFor="telefono">Teléfono</label>
-        <input
-          {...register("telefono")}
-          id="telefono"
-          className="w-full px-4 py-3 border rounded"
-          placeholder="Opcional"
-        />
-        {errors.telefono && (
-          <p className="text-red-600">{errors.telefono.message}</p>
-        )}
       </div>
 
       <div>
         <label htmlFor="mensaje">Mensaje *</label>
         <textarea
-          {...register("mensaje")}
+          name="mensaje"
           id="mensaje"
           rows={4}
           className="w-full px-4 py-3 border rounded"
           placeholder="¿En qué podemos ayudarte?"
         />
-        {errors.mensaje && (
-          <p className="text-red-600">{errors.mensaje.message}</p>
-        )}
+        <p className="text-red-600">{"Mesanje de error"}</p>
       </div>
 
-      <div className="flex items-start gap-2">
+      <div className="flex items-start gap-2 mb-2">
         <input
           type="checkbox"
-          {...register("privacidad")}
+          name="privacidad"
           id="privacidad"
           className="accent-blue-600 mt-1"
         />
@@ -146,9 +83,7 @@ export default function ContactForm() {
           .
         </label>
       </div>
-      {errors.privacidad && (
-        <p className="text-red-600">{errors.privacidad.message}</p>
-      )}
+      <p className="text-red-600">{"Mesanje de error"}</p>
 
       {/* Mensaje de estado */}
       {formStatus.message && (
@@ -165,10 +100,10 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        disabled={isSubmitting}
+        disabled={false}
         className="w-full bg-blue-600 text-white font-bold py-3 rounded hover:bg-blue-700 transition"
       >
-        {isSubmitting ? "Enviando..." : "Enviar mensaje"}
+        {false ? "Enviando..." : "Enviar mensaje"}
       </button>
     </form>
   );
