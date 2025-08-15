@@ -1,0 +1,144 @@
+---
+// Obtener parámetros de la URL
+const searchParams = new URL(Astro.request.url).searchParams;
+const success = searchParams.get("success");
+const error = searchParams.get("error");
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificación - Tu Sitio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex items-center justify-center px-4"
+  >
+    <div class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center">
+      <!-- Icono -->
+      <div class="flex justify-center mb-6">
+        {
+          success === "verified" && (
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-green-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+            </div>
+          )
+        }
+
+        {
+          error === "invalid" && (
+            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-red-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </div>
+          )
+        }
+
+        {
+          error === "server" && (
+            <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-yellow-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                />
+              </svg>
+            </div>
+          )
+        }
+
+        {
+          !success && !error && (
+            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center animate-pulse">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-blue-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                />
+              </svg>
+            </div>
+          )
+        }
+      </div>
+
+      <!-- Título y mensaje -->
+      <h1 class="text-2xl font-bold text-gray-800 mb-4">
+        {success === "verified" && "¡Verificado!"}
+        {error === "invalid" && "Enlace no válido"}
+        {error === "server" && "Error"}
+        {!success && !error && "Verificando..."}
+      </h1>
+
+      <p class="text-gray-600 mb-6 leading-relaxed">
+        {
+          success === "verified" &&
+            "Tu mensaje ha sido verificado y enviado correctamente. Gracias por contactar."
+        }
+        {
+          error === "invalid" &&
+            "El enlace de verificación no es válido o ya ha sido usado. Inténtalo de nuevo."
+        }
+        {
+          error === "server" &&
+            "Ocurrió un error en el servidor. Intenta más tarde o contacta directamente."
+        }
+        {
+          !success &&
+            !error &&
+            "Estamos procesando tu solicitud. No cierres esta página."
+        }
+      </p>
+
+      <!-- Botón -->
+      <a
+        href="/"
+        class="inline-block w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition duration-200"
+      >
+        Volver al inicio
+      </a>
+    </div>
+  </body>
+</html>
