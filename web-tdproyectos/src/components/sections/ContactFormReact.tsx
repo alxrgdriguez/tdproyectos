@@ -1,3 +1,4 @@
+// src/components/ContactForm.tsx
 import React, { useState, useEffect } from "react";
 
 export default function ContactForm() {
@@ -14,7 +15,7 @@ export default function ContactForm() {
   }>({ message: "", type: null });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Limpiar el mensaje después de 5 segundos
+  // Limpiar mensaje después de 5 segundos
   useEffect(() => {
     if (formStatus.message) {
       const timeout = setTimeout(
@@ -46,13 +47,12 @@ export default function ContactForm() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    const { name, value, type } = e.target;
-    // 'checked' only exists on HTMLInputElement, so we need to cast
+    const { name, value } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
 
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: name === "privacidad" ? checked : value,
     }));
   };
 
@@ -61,23 +61,49 @@ export default function ContactForm() {
     if (!validate()) return;
 
     setIsSubmitting(true);
-    try {
-      // Simulación de envío (puedes reemplazar con tu lógica)
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+    setFormStatus({ message: "", type: null });
 
-      setFormStatus({
-        message: "Tu mensaje ha sido enviado correctamente.",
-        type: "success",
+    // Usar variable de entorno o fallback a localhost:3000
+    const BACKEND_URL =
+      import.meta.env.PUBLIC_BACKEND_URL || "http://localhost:3000";
+
+    try {
+      const response = await fetch(`${BACKEND_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-      setFormData({
-        nombre: "",
-        email: "",
-        mensaje: "",
-        privacidad: false,
-      });
-    } catch {
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setFormStatus({
+          message: "Tu mensaje ha sido enviado correctamente.",
+          type: "success",
+        });
+        // Resetear formulario
+        setFormData({
+          nombre: "",
+          email: "",
+          mensaje: "",
+          privacidad: false,
+        });
+        setErrors({});
+      } else {
+        // Manejar errores del backend
+        const errorMsg = Array.isArray(data.error?.details)
+          ? data.error.details[0]
+          : data.error?.message || data.error || "Error al enviar el mensaje.";
+        setFormStatus({
+          message: errorMsg,
+          type: "error",
+        });
+      }
+    } catch (err) {
       setFormStatus({
-        message: "Ocurrió un error al enviar el mensaje.",
+        message: "No se pudo conectar con el servidor. Intenta más tarde.",
         type: "error",
       });
     } finally {
