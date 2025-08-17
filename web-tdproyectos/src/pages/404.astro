@@ -13,19 +13,28 @@ import Footer from "../components/layout/Footer.astro";
   <section
     class="h-screen relative flex flex-col items-center justify-center text-center overflow-hidden text-white"
   >
-    <!-- Fondo animado con video como en Hero -->
+    <!-- Video de fondo -->
     <video
       autoplay
       muted
       loop
       playsinline
+      preload="metadata"
       class="absolute inset-0 w-full h-full object-cover"
+      aria-hidden="true"
     >
-      <source src="/videos/video_Plano.mp4" type="video/mp4" />
-      Tu navegador no soporta videos HTML5.
+      <source
+        src="https://ik.imagekit.io/proyectostd/videos/video_Plano.mp4?updatedAt=1754215990237"
+        type="video/mp4"
+      />
+      Tu navegador no soporta el elemento de video.
     </video>
 
-    <div class="absolute inset-0 bg-blue-900/70 backdrop-blur-md"></div>
+    <!-- Overlay: más limpio y con gradiente para mejor contraste -->
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/60 to-gray-900/70"
+    >
+    </div>
 
     <div class="relative z-10 max-w-2xl px-4" data-aos="fade-down">
       <h1 class="text-7xl font-extrabold mb-6 drop-shadow-xl animate-pulse">

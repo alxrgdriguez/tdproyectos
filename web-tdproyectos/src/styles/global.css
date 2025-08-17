@@ -74,3 +74,29 @@ body {
     animation: loader-fade-in-up 0.8s ease-out forwards;
 
 }
+
+/* Transición suave para el modal */
+[data-modal] {
+    transition: opacity 0.3s ease;
+}
+
+[data-modal].hidden {
+    opacity: 0;
+}
+
+[data-modal]:not(.hidden) {
+    opacity: 1;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 640px) {
+    [data-modal-image] {
+        max-width: 90vw;
+        max-height: 80vh;
+    }
+
+    [data-close] {
+        top: auto !important;
+        bottom: -2rem;
+    }
+}

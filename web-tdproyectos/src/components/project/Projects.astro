@@ -1,28 +1,206 @@
----
-import ProjectCarousel from "./ProjectCarousel";
----
-
 <section
   id="proyectos"
-  class="fade-in-up relative py-24 px-4 md:px-12 bg-white text-gray-800 overflow-hidden"
+  class="fade-section py-28 bg-white px-6 md:px-12 overflow-hidden"
 >
-  <div class="max-w-7xl mx-auto text-center">
-    <h2 class="text-5xl md:text-6xl font-extrabold text-blue-900 mb-6">
+  <!-- Encabezado -->
+  <div class="max-w-6xl mx-auto text-center mb-16">
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-blue-900 mb-4">
       Proyectos Realizados
     </h2>
-    <p class="text-xl text-gray-700 mb-16 max-w-3xl mx-auto">
-      Algunos de los proyectos realizados a través de modelados 3D
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      Algunos de los proyectos realizados a través del modelado 3D
     </p>
-  </div>
-
-  <div class="absolute inset-0 pointer-events-none">
     <div
-      class="absolute -top-24 -left-24 w-[200%] h-64 rotate-3 bg-blue-50 opacity-20"
+      class="w-16 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mx-auto mt-4"
     >
     </div>
   </div>
 
-  <div class="relative w-full max-w-7xl mx-auto z-10">
-    <ProjectCarousel client:load />
+  <!-- Galería -->
+  <div
+    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 max-w-6xl mx-auto px-4"
+    id="galleryGrid"
+  >
+    <!-- Imágenes iniciales (6) -->
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/A1.webp?updatedAt=1754215930365"
+      alt="Vivienda moderna - Render 3D"
+      onclick="openModal(this.src, 0)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer"
+    />
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/B1.webp?updatedAt=1754215932573"
+      alt="Proyecto residencial - Render 3D"
+      onclick="openModal(this.src, 1)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer"
+    />
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/C1.webp?updatedAt=1754215932720"
+      alt="Casa sostenible - Render 3D"
+      onclick="openModal(this.src, 2)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer"
+    />
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/D1.webp?updatedAt=1754215932707"
+      alt="Diseño arquitectónico - Render 3D"
+      onclick="openModal(this.src, 3)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer"
+    />
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/1A.webp?updatedAt=1754215929724"
+      alt="Reforma integral - Render 3D"
+      onclick="openModal(this.src, 4)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer"
+    />
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/2A.webp?updatedAt=1754215929705"
+      alt="Cubierta metálica - Render 3D"
+      onclick="openModal(this.src, 5)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer"
+    />
+
+    <!-- Imágenes 7–8 (solo desktop) -->
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/2A_2.webp?updatedAt=1754215929829"
+      alt="Detalles constructivos - Render 3D"
+      onclick="openModal(this.src, 6)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer hidden md:block"
+    />
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/3A.webp?updatedAt=1754215929903"
+      alt="Urbanización - Render 3D"
+      onclick="openModal(this.src, 7)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer hidden md:block"
+    />
+
+    <!-- Imágenes 9–13 (ocultas) -->
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/4A.webp?updatedAt=1754215930184"
+      alt="Instalaciones técnicas - Render 3D"
+      onclick="openModal(this.src, 8)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer hidden"
+    />
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/5A.webp?updatedAt=1754215930131"
+      alt="Eficiencia energética - Render 3D"
+      onclick="openModal(this.src, 9)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer hidden"
+    />
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/6A.webp?updatedAt=1754215930113"
+      alt="Estructura industrial - Render 3D"
+      onclick="openModal(this.src, 10)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer hidden"
+    />
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/7A.webp?updatedAt=1754215929845"
+      alt="Proyecto comercial - Render 3D"
+      onclick="openModal(this.src, 11)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer hidden"
+    />
+    <img
+      src="https://ik.imagekit.io/proyectostd/images/3d-models/8A.webp?updatedAt=1754215929945"
+      alt="Diseño de fachada - Render 3D"
+      onclick="openModal(this.src, 12)"
+      class="gallery_image w-full h-60 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 cursor-pointer hidden"
+    />
+  </div>
+
+  <!-- Botón para mostrar más -->
+  <div class="text-center mt-10">
+    <button
+      onclick="showMoreImages()"
+      id="showMoreBtn"
+      class="group bg-blue-900 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-400/30"
+    >
+      <span>Ver todos los proyectos</span>
+      <span
+        class="inline-block transition-transform duration-300 group-hover:translate-x-1"
+      >
+        ⬇️</span
+      >
+    </button>
   </div>
 </section>
+
+<!-- MODAL -->
+<div
+  id="modal"
+  class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-[9999] hidden transition-opacity duration-300"
+>
+  <div class="relative max-w-5xl mx-auto">
+    <button
+      onclick="closeModal()"
+      class="absolute -top-14 right-0 text-white text-2xl font-bold hover:text-yellow-300 transition duration-200 focus:outline-none"
+      aria-label="Cerrar modal"
+    >
+      ✕
+    </button>
+    <button
+      onclick="prevImage()"
+      class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition duration-300"
+      aria-label="Imagen anterior"
+    >
+      ◀
+    </button>
+    <img
+      id="modalImage"
+      class="max-w-4xl max-h-[90vh] rounded-xl shadow-2xl transition-all duration-500 ease-out"
+      alt="Proyecto ampliado"
+    />
+    <button
+      onclick="nextImage()"
+      class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition duration-300"
+      aria-label="Siguiente imagen"
+    >
+      ▶
+    </button>
+  </div>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const images = Array.from(document.querySelectorAll(".gallery_image"));
+
+  window.openModal = function (src, index) {
+    document.getElementById("modal").classList.remove("hidden");
+    document.getElementById("modalImage").src = src;
+    currentIndex = index;
+    document.body.style.overflow = "hidden";
+  };
+
+  window.closeModal = function () {
+    document.getElementById("modal").classList.add("hidden");
+    document.body.style.overflow = "";
+  };
+
+  window.prevImage = function () {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById("modalImage").src = images[currentIndex].src;
+  };
+
+  window.nextImage = function () {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById("modalImage").src = images[currentIndex].src;
+  };
+
+  window.showMoreImages = function () {
+    document.querySelectorAll(".gallery_image.hidden").forEach((img) => {
+      img.classList.remove("hidden");
+    });
+    document.getElementById("showMoreBtn").classList.add("hidden");
+  };
+
+  // Animación de aparición al hacer scroll
+  const section = document.getElementById("proyectos");
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        section.classList.add("visible");
+        observer.unobserve(section);
+      }
+    },
+    { threshold: 0.1 }
+  );
+  observer.observe(section);
+</script>
