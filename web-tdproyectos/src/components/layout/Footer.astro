@@ -2,113 +2,235 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-white py-16 border-t border-blue-200 shadow-inner">
-  <div
-    class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-evenly gap-12 text-center md:text-left"
-  >
-    <!-- LOGO + DESCRIPCIÓN -->
-    <div class="flex-1">
-      <a
-        href="/"
-        class="flex items-center justify-center md:justify-start gap-3 mb-4 group"
-      >
-        <span
-          class="text-xl md:text-2xl font-bold text-gray-800 hover:text-blue-500"
-          >Taller de Proyectos</span
-        >
-      </a>
-      <p class="text-sm text-gray-600 leading-relaxed max-w-xs mx-auto md:mx-0">
-        Transformamos ideas en proyectos. Ingeniería, delineación y soluciones
-        técnicas para empresas y particulares.
-      </p>
-    </div>
-
-    <!-- CONTACTO -->
-    <div class="flex-1">
-      <h4 class="text-lg font-semibold text-blue-800 mb-4">
-        ¿Necesitas ayuda?
-      </h4>
-      <ul class="text-sm text-gray-700 space-y-3">
-        <li class="flex items-center justify-center md:justify-start gap-2">
-          <!-- Horario icono -->
-          <svg
-            class="w-5 h-5 text-blue-600"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
-          Lunes a Jueves: 9:00 - 14:00 / 16:00 - 19:00
-          <br />
-          Viernes: 9:00 - 14:00
-        </li>
-        <li class="flex items-center justify-center md:justify-start gap-2">
-          <!-- Email icono -->
-          <svg
-            class="w-5 h-5 text-blue-600"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M16 12H8m0 0l4-4m-4 4l4 4"></path>
-          </svg>
+<!-- Replaced ultra-polished footer with cleaner, more elegant design based on reference -->
+<footer
+  class="bg-gradient-to-br from-slate-50 to-blue-50 border-t border-blue-100"
+>
+  <!-- Main Footer Content -->
+  <!-- improved mobile padding and spacing -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+    <!-- enhanced grid responsiveness for better mobile/tablet experience -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12"
+    >
+      <!-- Company Info -->
+      <!-- improved mobile layout and button positioning -->
+      <div class="sm:col-span-2 lg:col-span-2">
+        <div class="mb-6">
           <a
-            href="mailto:tallerdeproyectospulpi@gmail.com"
-            class="hover:underline">tallerdeproyectospulpi@gmail.com</a
+            href="/"
+            class="inline-flex items-center gap-3 group transition-all duration-300 hover:scale-105"
           >
-        </li>
-        <li class="flex items-center justify-center md:justify-start gap-2">
-          <!-- Ubicación icono -->
-          <svg
-            class="w-5 h-5 text-blue-600"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 11.5a2 2 0 100-4 2 2 0 000 4z"></path>
-            <path d="M12 22s8-5.5 8-11a8 8 0 10-16 0c0 5.5 8 11 8 11z"></path>
-          </svg>
-          Avenida Andalucía, 16. 1º P5, 04640 Pulpí, Almería
-        </li>
-      </ul>
-    </div>
-
-    <!-- REDES + CTA -->
-    <div class="flex-1">
-      <h4 class="text-lg font-semibold text-blue-800 mb-4">Síguenos</h4>
-      <div class="flex justify-center md:justify-start gap-4">
-        <a
-          href="https://www.facebook.com/taller.deproyectos"
-          target="_blank"
-          class="text-blue-600 hover:text-blue-800 transition"
+            <div
+              class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center group-hover:bg-blue-700 transition-colors"
+            >
+              <span class="text-white font-bold text-lg">TP</span>
+            </div>
+            <!-- responsive text sizing -->
+            <span
+              class="text-xl sm:text-2xl font-bold text-gray-800 group-hover:text-blue-600 transition-colors"
+            >
+              Taller de Proyectos
+            </span>
+          </a>
+        </div>
+        <!-- improved mobile text sizing and spacing -->
+        <p
+          class="text-gray-600 leading-relaxed mb-6 sm:mb-8 max-w-md text-sm sm:text-base"
         >
-          <!-- Facebook icónico con más estilo -->
-          <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 5.002 3.657 9.128 8.438 9.876v-6.987H8.078v-2.89h2.36V9.845c0-2.331 1.387-3.622 3.513-3.622.719 0 1.491.127 1.491.127v1.64h-.84c-.827 0-1.087.515-1.087 1.04v1.25h2.025l-.324 2.89h-1.701V21.9C18.343 21.128 22 17.002 22 12z"
-            ></path>
-          </svg>
-        </a>
-      </div>
-      <div class="mt-6">
+          Transformamos ideas en proyectos reales. Especialistas en ingeniería,
+          delineación y soluciones técnicas innovadoras para empresas y
+          particulares.
+        </p>
+
+        <!-- CTA Button -->
+        <!-- enhanced mobile button with better touch target -->
         <a
           href="#contacto"
-          class="inline-block bg-blue-600 text-white px-5 py-2 rounded-full shadow-md hover:bg-blue-700 transition"
+          class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:bg-blue-700 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto text-center"
         >
-          Contáctanos
+          <svg
+            class="w-4 h-4 sm:w-5 sm:h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+            ></path>
+          </svg>
+          <span class="text-sm sm:text-base">Solicitar Presupuesto</span>
         </a>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="mt-8 sm:mt-0">
+        <!-- improved mobile header spacing -->
+        <h4
+          class="text-lg font-bold text-gray-800 mb-4 sm:mb-6 flex items-center gap-2"
+        >
+          <div class="w-1 h-6 bg-blue-600 rounded-full"></div>
+          Contacto
+        </h4>
+        <!-- enhanced mobile spacing and touch targets -->
+        <ul class="space-y-3 sm:space-y-4">
+          <li>
+            <a
+              href="tel:+34950467982"
+              class="flex items-start gap-3 text-gray-600 hover:text-blue-600 transition-colors group py-1"
+            >
+              <svg
+                class="w-5 h-5 mt-0.5 group-hover:scale-110 transition-transform flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path>
+              </svg>
+              <span class="text-sm leading-relaxed font-medium"
+                >+34 950 46 54 66
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:tallerdeproyectospulpi@gmail.com"
+              class="flex items-start gap-3 text-gray-600 hover:text-blue-600 transition-colors group py-1"
+            >
+              <svg
+                class="w-5 h-5 mt-0.5 group-hover:scale-110 transition-transform flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <!-- improved email text wrapping on mobile -->
+              <span class="text-sm leading-relaxed break-all sm:break-normal"
+                >tallerdeproyectospulpi@gmail.com</span
+              >
+            </a>
+          </li>
+          <li class="flex items-start gap-3 text-gray-600 py-1">
+            <svg
+              class="w-5 h-5 mt-0.5 text-blue-600 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              ></path>
+              <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+            <div class="text-sm leading-relaxed">
+              <div class="font-medium text-gray-700">
+                Avenida Andalucía, 16. 1º P5
+              </div>
+              <div class="text-gray-500">04640 Pulpí, Almería</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Schedule & Social -->
+      <div class="mt-8 sm:mt-0">
+        <!-- improved mobile header spacing -->
+        <h4
+          class="text-lg font-bold text-gray-800 mb-4 sm:mb-6 flex items-center gap-2"
+        >
+          <div class="w-1 h-6 bg-blue-600 rounded-full"></div>
+          Horarios
+        </h4>
+        <!-- enhanced mobile spacing for schedule -->
+        <div class="space-y-3 mb-6 sm:mb-8">
+          <div class="flex items-start gap-3 text-gray-600">
+            <svg
+              class="w-5 h-5 mt-0.5 text-blue-600 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 8v4l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <div class="text-sm leading-relaxed">
+              <div class="font-semibold text-gray-800 mb-1">Lunes - Jueves</div>
+              <div class="text-gray-600">9:00 - 14:00 / 16:00 - 19:00</div>
+            </div>
+          </div>
+          <!-- improved mobile alignment for Friday schedule -->
+          <div class="flex items-start gap-3 text-gray-600 ml-8">
+            <div class="text-sm leading-relaxed">
+              <div class="font-semibold text-gray-800 mb-1">Viernes</div>
+              <div class="text-gray-600">9:00 - 14:00</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h5
+            class="font-semibold text-gray-800 mb-3 sm:mb-4 flex items-center gap-2"
+          >
+            <div class="w-0.5 h-4 bg-blue-400 rounded-full"></div>
+            Síguenos
+          </h5>
+          <!-- improved mobile social buttons with better touch targets -->
+          <div class="flex gap-3">
+            <a
+              href="https://www.facebook.com/taller.deproyectos"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center w-12 h-12 sm:w-10 sm:h-10 bg-blue-600 text-white rounded-lg hover:bg-blue-700 hover:scale-110 transition-all duration-300 shadow-md hover:shadow-lg"
+              aria-label="Síguenos en Facebook"
+            >
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22 12C22 6.477 17.523 2 12 2S2 6.477 2 12c0 5.002 3.657 9.128 8.438 9.876v-6.987H8.078v-2.89h2.36V9.845c0-2.331 1.387-3.622 3.513-3.622.719 0 1.491.127 1.491.127v1.64h-.84c-.827 0-1.087.515-1.087 1.04v1.25h2.025l-.324 2.89h-1.701V21.9C18.343 21.128 22 17.002 22 12z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- COPYRIGHT -->
-  <div
-    class="mt-10 border-t border-gray-200 pt-4 text-center text-sm text-gray-500"
-  >
-    &copy; {currentYear} TALLER DE PROYECTOS INGENIERIA Y DELINEACION SL.
+  <!-- Bottom Bar -->
+  <div class="border-t border-blue-200 bg-white/50">
+    <!-- improved mobile padding and spacing -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6">
+      <!-- enhanced mobile layout for copyright and links -->
+      <div
+        class="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4"
+      >
+        <p
+          class="text-xs sm:text-sm text-gray-600 text-center sm:text-left leading-relaxed"
+        >
+          © {currentYear} TALLER DE PROYECTOS INGENIERIA Y DELINEACION SL. Todos
+          los derechos reservados.
+        </p>
+        <!-- improved mobile link spacing and wrapping -->
+        <div
+          class="flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-xs sm:text-sm text-gray-500"
+        >
+          <a href="/privacidad" class="hover:text-blue-600 transition-colors">
+            Política de Privacidad
+          </a>
+          <a href="/terminos" class="hover:text-blue-600 transition-colors">
+            Términos de Uso
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>
