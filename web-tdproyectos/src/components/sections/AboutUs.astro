@@ -1,25 +1,36 @@
+---
+// Datos de estadísticas para mejor mantenimiento
+const estadisticas = [
+  { num: "+200", label: "Proyectos realizados con éxito" },
+  { num: "+20 años", label: "de experiencia en el sector" },
+  { num: "100%", label: "Clientes satisfechos y recurrentes" },
+];
+---
+
 <section
   id="sobre-nosotros"
-  class="fade-in-up relative py-28 px-6 md:px-20 bg-white text-gray-800 overflow-hidden"
-  data-aos="fade-up"
+  class="relative py-16 sm:py-20 md:py-24 lg:py-28 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 bg-white text-gray-800 overflow-hidden"
 >
-  <!-- Fondo diagonal decorativo (refinado) -->
-  <div class="absolute inset-0 pointer-events-none">
+  <!-- Fondo decorativo optimizado -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <div
-      class="absolute -top-28 -left-32 w-[200%] h-72 rotate-3 bg-blue-50 rounded-full blur-2xl opacity-40"
-      aria-hidden="true"
+      class="absolute -top-20 sm:-top-28 -left-20 sm:-left-32 w-[150%] sm:w-[200%] h-48 sm:h-72 rotate-3 bg-blue-50 rounded-full blur-xl sm:blur-2xl opacity-30 sm:opacity-40"
     >
     </div>
   </div>
 
-  <!-- Encabezado con jerarquía refinada -->
-  <div class="max-w-7xl mx-auto text-center relative z-10 mb-24">
+  <!-- Encabezado responsive -->
+  <div
+    class="max-w-7xl mx-auto text-center relative z-10 mb-12 sm:mb-16 md:mb-20 lg:mb-24"
+  >
     <h2
-      class="text-5xl md:text-6xl font-extrabold text-blue-900 tracking-tight mb-6"
+      class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-blue-900 tracking-tight mb-4 sm:mb-6"
     >
       Sobre Nosotros
     </h2>
-    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+    <p
+      class="text-base sm:text-lg md:text-xl text-gray-600 max-w-xs sm:max-w-2xl md:max-w-3xl mx-auto leading-relaxed px-2 sm:px-0"
+    >
       Ingeniería y arquitectura con más de 20 años de experiencia,
       <span class="font-medium"
         >dedicados a la excelencia técnica y al servicio personalizado.</span
@@ -27,45 +38,50 @@
     </p>
   </div>
 
-  <!-- Contenido principal -->
+  <!-- Contenido principal responsive -->
   <div
-    class="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center z-10"
+    class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center z-10"
   >
-    <!-- Logo con efecto premium -->
-    <div class="flex justify-center md:justify-start" data-aos="fade-right">
+    <!-- Logo con diseño responsive -->
+    <div class="flex justify-center lg:justify-start order-2 lg:order-1">
       <div
-        class="group bg-white p-8 rounded-2xl shadow-lg border border-blue-100 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+        class="group bg-white p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-blue-100 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 sm:hover:-translate-y-2 w-full max-w-sm sm:max-w-md lg:max-w-none"
       >
-        <!-- Logo -->
         <img
           src="https://ik.imagekit.io/proyectostd/images/logo/logo.webp?updatedAt=1754216876949"
-          alt="Logo Taller de Proyectos"
-          class="w-96 h-auto object-contain max-w-full transition-transform duration-500 group-hover:scale-105"
+          alt="Logo Taller de Proyectos - Estudio de ingeniería y arquitectura"
+          class="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
+          loading="lazy"
+          width="384"
+          height="200"
         />
-        <!-- Efecto de brillo sutil en hover -->
+        <!-- Efecto de brillo optimizado -->
         <div
-          class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-transparent via-white/60 to-transparent opacity-0 group-hover:opacity-20 pointer-events-none transition-opacity duration-300 -z-10"
+          class="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-transparent via-white/60 to-transparent opacity-0 group-hover:opacity-20 pointer-events-none transition-opacity duration-300"
         >
         </div>
       </div>
     </div>
 
-    <!-- Texto descriptivo - versión premium -->
-    <div class="space-y-6" data-aos="fade-left">
-      <p class="text-lg leading-relaxed text-gray-700">
+    <!-- Texto descriptivo responsive -->
+    <div class="space-y-4 sm:space-y-6 order-1 lg:order-2">
+      <p class="text-sm sm:text-base md:text-lg leading-relaxed text-gray-700">
         <strong class="text-blue-900">Taller de Proyectos SL</strong> es un estudio
         de ingeniería y arquitectura con más de
         <span class="text-blue-700 font-semibold">20 años de trayectoria</span>,
         consolidado como referente en el levante almeriense.
       </p>
-      <p class="text-lg leading-relaxed text-gray-700">
+
+      <p class="text-sm sm:text-base md:text-lg leading-relaxed text-gray-700">
         Combinamos <span class="font-semibold text-blue-800"
           >tecnología, precisión y creatividad</span
-        > para ofrecer soluciones integrales a empresas y particulares. Nuestro equipo
+        >
+        para ofrecer soluciones integrales a empresas y particulares. Nuestro equipo
         multidisciplinar trabaja con compromiso, excelencia y trato humano en cada
         fase del proyecto.
       </p>
-      <p class="text-lg leading-relaxed text-gray-700">
+
+      <p class="text-sm sm:text-base md:text-lg leading-relaxed text-gray-700">
         Nos apasiona diseñar y materializar ideas, cumpliendo siempre con
         normativas, plazos y altos estándares de calidad.
         <span class="font-semibold text-blue-800"
@@ -75,24 +91,17 @@
     </div>
   </div>
 
-  <!-- Estadísticas - diseño premium -->
+  <!-- Estadísticas responsive -->
   <div
-    class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto z-10 relative"
+    class="mt-16 sm:mt-20 md:mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto z-10 relative"
   >
     {
-      [
-        { num: "+200", label: "Proyectos realizados con éxito" },
-        { num: "+20 años", label: "de experiencia en el sector" },
-        { num: "100%", label: "Clientes satisfechos y recurrentes" },
-      ].map((stat, i) => (
-        <div
-          class="bg-white border border-blue-100 rounded-xl p-7 text-center hover:shadow-xl transition-all duration-400 hover:-translate-y-1 group"
-          data-aos={["fade-right", "fade-up", "fade-left"][i]}
-        >
-          <h3 class="text-5xl font-extrabold text-blue-800 mb-2.5 transition-colors group-hover:text-blue-900">
+      estadisticas.map((stat, i) => (
+        <div class="bg-white border border-blue-100 rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-7 text-center hover:shadow-xl transition-all duration-400 hover:-translate-y-1 group">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-blue-800 mb-2 sm:mb-2.5 transition-colors group-hover:text-blue-900">
             {stat.num}
           </h3>
-          <p class="text-gray-600 text-base leading-relaxed font-medium">
+          <p class="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed font-medium">
             {stat.label}
           </p>
         </div>
@@ -100,21 +109,63 @@
     }
   </div>
 
-  <!-- CTA Final - Botón de autoridad -->
-  <div
-    class="mt-20 text-center z-10 relative"
-    data-aos="fade-up"
-    data-aos-delay="400"
-  >
-    <p class="text-xl text-gray-700 mb-6 leading-relaxed max-w-2xl mx-auto">
-      <strong class="text-blue-900">¿Tienes un proyecto en mente?</strong><br />
-      Estamos aquí para ayudarte a hacerlo realidad, con rigor y cercanía.
+  <!-- CTA responsive -->
+  <div class="mt-12 sm:mt-16 md:mt-20 text-center z-10 relative px-4 sm:px-0">
+    <p
+      class="text-base sm:text-lg md:text-xl text-gray-700 mb-4 sm:mb-6 leading-relaxed max-w-xs sm:max-w-xl md:max-w-2xl mx-auto"
+    >
+      <strong class="text-blue-900">¿Tienes un proyecto en mente?</strong><br
+        class="hidden sm:block"
+      />
+      <span class="sm:hidden"> </span>Estamos aquí para ayudarte a hacerlo
+      realidad, con rigor y cercanía.
     </p>
+
     <a
       href="#contacto"
-      class="group inline-flex items-center gap-2 bg-blue-900 text-white font-semibold py-3.5 px-10 rounded-full shadow-md hover:shadow-xl hover:bg-blue-800 transition-all duration-300 ease-out transform hover:scale-105 active:scale-100 focus:outline-none focus:ring-4 focus:ring-blue-400/30"
+      class="group inline-flex items-center justify-center gap-2 bg-blue-900 text-white font-semibold py-3 sm:py-3.5 px-6 sm:px-8 md:px-10 rounded-full shadow-md hover:shadow-xl hover:bg-blue-800 transition-all duration-300 ease-out transform hover:scale-105 active:scale-100 focus:outline-none focus:ring-4 focus:ring-blue-400/30 text-sm sm:text-base w-full sm:w-auto max-w-xs sm:max-w-none mx-auto"
+      aria-label="Solicitar presupuesto para tu proyecto"
     >
       <span>Solicitar presupuesto</span>
+      <svg
+        class="w-4 h-4 transition-transform group-hover:translate-x-1"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 5l7 7-7 7"></path>
+      </svg>
     </a>
   </div>
 </section>
+
+<style>
+  /* Animaciones optimizadas para rendimiento */
+  @media (prefers-reduced-motion: no-preference) {
+    section {
+      animation: fadeInUp 0.8s ease-out;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Optimización para pantallas muy pequeñas */
+  @media (max-width: 320px) {
+    .group img {
+      max-width: 280px;
+    }
+  }
+</style>
