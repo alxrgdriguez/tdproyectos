@@ -10,7 +10,7 @@
 
 ---
 
-## 📸 Captura del proyecto
+## TALLER DE PROYECTOS INGENIERIA Y DELINEACION SL
 ![Captura del sitio web](https://ik.imagekit.io/proyectostd/images/logo/logo.webp?updatedAt=1754216876949?tr=w-800,q-80)
 
 ---
