@@ -1,15 +1,8 @@
 <section
   id="inicio"
-  class="relative h-screen flex flex-col items-center justify-center text-center text-white overflow-hidden pt-16"
+  class="relative h-screen flex flex-col items-center justify-center text-center text-white overflow-hidden"
 >
-  <!-- Offset para ancla (accesibilidad) -->
-  <div
-    class="absolute -top-16 h-16 w-full pointer-events-none"
-    aria-hidden="true"
-  >
-  </div>
-
-  <!-- Video de fondo -->
+  <!-- Video de fondo optimizado -->
   <video
     autoplay
     muted
@@ -26,67 +19,128 @@
     Tu navegador no soporta el elemento de video.
   </video>
 
-  <!-- Overlay: más limpio y con gradiente para mejor contraste -->
+  <!-- Overlay más sutil y elegante -->
   <div
-    class="absolute inset-0 bg-gradient-to-b from-blue-900/80 via-blue-900/60 to-gray-900/70"
+    class="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900/80"
   >
   </div>
 
-  <!-- Contenido principal -->
-  <div class="relative z-10 px-6 max-w-6xl mx-auto" data-aos="fade-up">
+  <!-- Contenido principal optimizado -->
+  <div class="relative z-10 px-6 max-w-5xl mx-auto" data-aos="fade-up">
+    <!-- Título más directo y atractivo -->
     <h1
-      class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 drop-shadow-md"
+      class="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight mb-6 tracking-tight"
     >
-      Estudio de Arquitectura<br /><span class="text-cyan-300 font-bold"
-        >e Ingeniería</span
+      <span class="block text-white">Transformamos</span>
+      <span
+        class="block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
       >
+        Tus Ideas en Realidad
+      </span>
     </h1>
+
+    <!-- Descripción más clara y orientada al beneficio -->
     <p
-      class="mt-4 text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed drop-shadow"
+      class="text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed text-gray-200 mb-8"
     >
-      Soluciones técnicas e innovadoras, diseñadas con precisión y compromiso.
+      Estudio de Arquitectura e Ingeniería
     </p>
 
-    <!-- Botón de contacto mejorado -->
-    <a
-      href="#contacto"
-      class="group mt-10 relative inline-flex items-center gap-4 px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-blue-700 via-cyan-600 to-blue-700 shadow-2xl hover:shadow-3xl hover:scale-110 active:scale-105 transition-all duration-300 ease-out focus:outline-none focus:ring-4 focus:ring-cyan-400/40 focus:ring-offset-0 overflow-hidden"
-      aria-label="Contacta por teléfono o formulario"
+    <!-- Elementos de confianza -->
+    <div
+      class="flex flex-wrap justify-center items-center gap-8 mb-10 text-sm text-gray-300"
     >
-      <!-- Texto principal -->
-      <span class="relative z-10 whitespace-nowrap text-lg">
-        📞 <strong>Llámanos</strong> o escríbenos
-      </span>
+      <div class="flex items-center gap-2">
+        <svg
+          class="w-5 h-5 text-cyan-400"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span>+20 años de experiencia</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg
+          class="w-5 h-5 text-cyan-400"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span>Proyectos certificados</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <svg
+          class="w-5 h-5 text-cyan-400"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <span>Atención personalizada</span>
+      </div>
+    </div>
 
-      <!-- Brillo lateral (efecto de barrido) -->
-      <span
-        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none"
-      ></span>
+    <!-- CTAs más claros y atractivos -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a
+        href="#contacto"
+        class="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-semibold text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+      >
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
+          ></path>
+        </svg>
+        <span>Consulta Gratuita</span>
+      </a>
 
-      <!-- Resplandor interno sutil -->
-      <span
-        class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-500 pointer-events-none"
-      ></span>
-    </a>
+      <a
+        href="#servicios"
+        class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/30 rounded-full font-medium text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+      >
+        <span>Ver Servicios</span>
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
+    </div>
   </div>
 
-  <!-- Indicador de scroll animado y estilizado -->
+  <!-- Indicador de scroll más sutil -->
   <div
-    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex flex-col items-center text-white/80 group"
-    aria-hidden="true"
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce"
   >
-    <span class="text-xs uppercase tracking-wider mb-2 opacity-90"></span>
-    <div class="animate-bounce">
-      <svg
-        width="24"
-        height="24"
-        fill="none"
-        stroke="currentColor"
+    <svg
+      class="w-6 h-6 text-white/60"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
         stroke-width="2"
-        class="transition-transform duration-300 group-hover:translate-y-1"
-      >
-        <path d="M12 6v12M6 12l6 6 6-6"></path>
-      </svg>
-    </div>
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
   </div>
 </section>
