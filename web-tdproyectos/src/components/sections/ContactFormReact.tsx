@@ -20,25 +20,41 @@ export default function ContactForm() {
     if (formStatus.message) {
       const timeout = setTimeout(
         () => setFormStatus({ message: "", type: null }),
-        5000
+        8000
       );
       return () => clearTimeout(timeout);
     }
   }, [formStatus]);
 
+  // ✅ Validación frontend (básica, para mejor UX)
   const validate = () => {
     const newErrors: Record<string, string> = {};
 
-    if (!formData.nombre.trim()) newErrors.nombre = "El nombre es obligatorio.";
+    if (!formData.nombre.trim()) {
+      newErrors.nombre = "El nombre es obligatorio.";
+    } else if (formData.nombre.trim().length < 2) {
+      newErrors.nombre = "Debe tener al menos 2 caracteres.";
+    } else if (formData.nombre.length > 50) {
+      newErrors.nombre = "No puede superar los 50 caracteres.";
+    }
+
     if (!formData.email.trim()) {
       newErrors.email = "El email es obligatorio.";
-    } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/i.test(formData.email)) {
-      newErrors.email = "Introduce un email válido.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Formato de email no válido.";
     }
-    if (!formData.mensaje.trim())
-      newErrors.mensaje = "El mensaje no puede estar vacío.";
-    if (!formData.privacidad)
+
+    if (!formData.mensaje.trim()) {
+      newErrors.mensaje = "El mensaje es obligatorio.";
+    } else if (formData.mensaje.trim().length < 10) {
+      newErrors.mensaje = "Debe tener al menos 10 caracteres.";
+    } else if (formData.mensaje.length > 2000) {
+      newErrors.mensaje = "No puede superar los 2000 caracteres.";
+    }
+
+    if (!formData.privacidad) {
       newErrors.privacidad = "Debes aceptar la política de privacidad.";
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -63,7 +79,7 @@ export default function ContactForm() {
     setIsSubmitting(true);
     setFormStatus({ message: "", type: null });
 
-    // Usar variable de entorno o fallback a localhost:3000
+    // Usar variable de entorno o fallback
     const BACKEND_URL =
       import.meta.env.PUBLIC_BACKEND_URL || "http://localhost:3000";
 
@@ -80,7 +96,7 @@ export default function ContactForm() {
 
       if (response.ok && data.success) {
         setFormStatus({
-          message: "Tu mensaje ha sido enviado correctamente.",
+          message: "Te hemos enviado un correo para verificar tu mensaje.",
           type: "success",
         });
         // Resetear formulario
@@ -92,10 +108,11 @@ export default function ContactForm() {
         });
         setErrors({});
       } else {
-        // Manejar errores del backend
-        const errorMsg = Array.isArray(data.error?.details)
-          ? data.error.details[0]
-          : data.error?.message || data.error || "Error al enviar el mensaje.";
+        // Mostrar primer error del backend
+        const errorMsg = Array.isArray(data.details)
+          ? data.details[0]
+          : data.error || "Error al enviar el mensaje.";
+
         setFormStatus({
           message: errorMsg,
           type: "error",
@@ -235,7 +252,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className=" cursor-pointer w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? "Enviando..." : "Enviar mensaje"}
       </button>
