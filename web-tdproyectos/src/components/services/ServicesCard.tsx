@@ -16,7 +16,7 @@ export default function ServicesCard({ services }: Props) {
       >
         <Icon icon={services.icon} className="w-8 h-8" />
       </div>
-      <h3 className="text-2xl font-bold text-blue-900 mb-3 group-hover:underline decoration-2 text-center">
+      <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:underline decoration-2 text-center">
         {services.title}
       </h3>
       <p className="text-gray-700 text-base leading-relaxed text-center">
