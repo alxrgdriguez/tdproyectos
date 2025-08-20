@@ -62,23 +62,6 @@ El proyecto se despliega automáticamente en Vercel con cada `git push`:
 - **Frontend**: `https://tallerdeproyectos.es`
 ---
 
-## 📂 Estructura del proyecto
-
-tallerdeproyectos/
-├── src/
-│ ├── pages/ # Páginas con Astro
-│ ├── components/ # Componentes React
-│ └── layouts/ # Layouts reutilizables
-├── backend/
-│ ├── routes/ # API Express (contact, verify, cleanup)
-│ ├── utils/ # Funciones auxiliares
-│ └── index.ts # Servidor Express (sin listen)
-├── public/ # Assets (imágenes, favicon)
-├── vercel.json # Configuración para Vercel
-└── README.md # Este archivo
-
----
-
 ## 📬 ¿Quieres un sitio web así?
 
 ¿Te gustaría tener un **sitio web profesional, rápido y con formulario seguro** como este?
