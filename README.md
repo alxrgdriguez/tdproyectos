@@ -94,7 +94,7 @@ tallerdeproyectos/
 
 ## 📎 Contacto
 
-- 💼 [LinkedIn]([https://www.linkedin.com/in/alejandro-rodr%C3%ADguez-gallardo-44a364370/]
+- 💼 [Linkedln](https://www.linkedin.com/in/alejandro-rodr%C3%ADguez-gallardo-44a364370/) 
 - ✉️ alejandorgallardo23@gmail.com
 - 🛠️ [GitHub](https://github.com/alxrgdriguez) 
 
