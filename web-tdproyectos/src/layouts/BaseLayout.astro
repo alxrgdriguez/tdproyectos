@@ -5,6 +5,7 @@ import "keen-slider/keen-slider.min.css";
 import "react-photo-view/dist/react-photo-view.css";
 import LoadingWrapper from "../components/loading/LoadingWrapper";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import Analytics from "@vercel/analytics/astro";
 const { title = "TALLER DE PROYECTOS INGENIERIA Y DELINEACION SL" } =
   Astro.props;
 ---
@@ -48,6 +49,7 @@ const { title = "TALLER DE PROYECTOS INGENIERIA Y DELINEACION SL" } =
       <slot name="footer" />
     </LoadingWrapper>
     <script is:inline src="/scripts/scrollEffects.js"></script>
+    <Analytics />
     <SpeedInsights />
   </body>
 </html>
